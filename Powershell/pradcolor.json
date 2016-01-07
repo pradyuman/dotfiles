@@ -21,7 +21,7 @@
     "load_console_IME":  true,
     "yellow":  "#657b83",
     "dark_magenta":  "#d33682",
-    "cyan":  "#93a1a1",
+    "cyan":  "#00a600",
     "green":  "#586e75",
     "dark_blue":  "#268bd2",
     "gray":  "#eee8d5",
@@ -29,5 +29,5 @@
     "fullscreen":  false,
     "num_history_buffers":  4,
     "black":  "#002b36",
-    "dark_cyan":  "#2aa198"
+    "dark_cyan":  "#00a6b2"
 }
