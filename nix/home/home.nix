@@ -5,6 +5,10 @@ let
 in {
   home.file.".gitconfig".source = "${dotfiles}/.gitconfig";
 
+  home.packages = with pkgs; [
+    brave
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
