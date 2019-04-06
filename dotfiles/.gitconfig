@@ -1,0 +1,8 @@
+[user]
+  email = me@pradyuman.co
+  name = "Pradyuman Vig"
+  signingKey = 4F74D5361C4CA31E
+[commit]
+  gpgsign = true
+[github]
+  user = pradyuman
