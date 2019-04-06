@@ -14,6 +14,13 @@ in {
 
     dhall
     dhall-json
+
+    jq
+    parallel
+    protobuf
+    yarn
+    nodejs-10_x
+    python
   ];
 
   # Let Home Manager install and manage itself.
@@ -25,6 +32,12 @@ in {
       defaultCacheTtl = 7 * 24 * 3600;
       maxCacheTtl = 7 * 24 * 3600;
       enableSshSupport = true;
+    };
+  };
+
+  nixpkgs.config = {
+    packageOverrides = pkgs: {
+      yarn = pkgs.yarn.override { nodejs = pkgs.nodejs-10_x; };
     };
   };
 
