@@ -7,6 +7,10 @@ in {
 
   home.packages = with pkgs; [
     brave
+    discord
+    slack
+    signal-desktop
+    vscode
   ];
 
   # Let Home Manager install and manage itself.
@@ -20,4 +24,6 @@ in {
       enableSshSupport = true;
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
 }
