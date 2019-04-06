@@ -21,6 +21,8 @@ in {
     yarn
     nodejs-10_x
     python
+
+    awscli
   ];
 
   # Let Home Manager install and manage itself.

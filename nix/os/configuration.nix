@@ -4,6 +4,7 @@
   environment = {
     systemPackages = with pkgs; [
       bat
+      curl
       exa
       git
       gnupg
@@ -11,10 +12,14 @@
       vim
       wget
       xclip
+      xscreensaver
+      zip
       zsh
 
       # Build
       binutils
+      clang
+      cmake
       gcc
       gnumake
     ];
