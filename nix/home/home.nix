@@ -11,6 +11,9 @@ in {
     slack
     signal-desktop
     vscode
+
+    dhall
+    dhall-json
   ];
 
   # Let Home Manager install and manage itself.
