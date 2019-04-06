@@ -12,6 +12,11 @@
       wget
       xclip
       zsh
+
+      # Build
+      binutils
+      gcc
+      gnumake
     ];
   };
 
