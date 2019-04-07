@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [ ./nginx.nix
+    ];
+    
   environment = {
     systemPackages = with pkgs; [
       bat
@@ -20,6 +24,7 @@
       binutils
       clang
       cmake
+      pkg-config
       gcc
       gnumake
     ];
