@@ -30,6 +30,16 @@
     ];
   };
 
-  time.timeZone = "America/Los_Angeles";
-} 
+  users.users.pradyuman = {
+    uid = 1989;
+    description = "Pradyuman Vig";
+    isNormalUser = true;
+    home = "/home/pradyuman";
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
+  };
 
+  time.timeZone = "America/Los_Angeles";
+}

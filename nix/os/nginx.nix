@@ -6,9 +6,14 @@ let
   hostname = lib.toLower config.networking.hostName;
 in {
   networking = {
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
+
     firewall.allowedTCPPorts = [
       80
-    ]; 
+    ];
   };
 
   services.nginx = {
