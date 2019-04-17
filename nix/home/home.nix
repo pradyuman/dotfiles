@@ -23,6 +23,7 @@ in {
     python
 
     awscli
+    unzip
   ];
 
   # Let Home Manager install and manage itself.
