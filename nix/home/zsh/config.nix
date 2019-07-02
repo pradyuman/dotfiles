@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     zsh
+    (callPackage ./pure-prompt.nix {})
   ];
 
   programs.zsh = lib.mkMerge [{
@@ -12,10 +13,10 @@
         GPG_TTY = "$(tty)";
     };
 
-    oh-my-zsh = {
-      enable = true;
-      theme = "avit";
-    };
+    initExtra = ''
+      autoload -U promptinit; promptinit
+      prompt pure
+    '';
   }
 
   (lib.mkIf pkgs.stdenv.isDarwin {

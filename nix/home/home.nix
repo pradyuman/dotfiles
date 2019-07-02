@@ -6,7 +6,7 @@ in {
   home.file.".gitconfig".source = "${dotfiles}/.gitconfig";
 
   imports = [
-    ./zsh.nix
+    ./zsh/config.nix
   ];
 
   home.packages = with pkgs; [
