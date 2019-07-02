@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/codex/dotfiles";
+  dotfiles = "${config.home.homeDirectory}/dotfiles";
 in {
   home.file.".gitconfig".source = "${dotfiles}/.gitconfig";
 
