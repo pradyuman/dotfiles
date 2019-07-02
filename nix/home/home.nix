@@ -5,11 +5,16 @@ let
 in {
   home.file.".gitconfig".source = "${dotfiles}/.gitconfig";
 
+  imports = [
+    ./zsh.nix
+  ];
+
   home.packages = with pkgs; [
     git
     gnupg
     jq
     parallel
+    pinentry_mac
     protobuf
     yarn
     python
