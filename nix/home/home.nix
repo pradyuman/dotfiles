@@ -1,19 +1,15 @@
 { config, pkgs, ... }:
 
-let
-  dotfiles = "${config.home.homeDirectory}/dotfiles";
-in {
-  home.file.".gitconfig".source = "${dotfiles}/.gitconfig";
-
+{
   imports = [
-    ./zsh/config.nix
+    ./git.nix
     ./vscode.nix
+    ./zsh/config.nix
   ];
 
   home.packages = with pkgs; [
     bat
     exa
-    git
     gnupg
     jq
     parallel
