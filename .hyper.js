@@ -3,7 +3,7 @@ module.exports = {
     updateChannel: "stable",
     fontSize: 12,
     fontFamily:
-      'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      'Hack, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     fontWeight: "normal",
     fontWeightBold: "bold",
     lineHeight: 1,
