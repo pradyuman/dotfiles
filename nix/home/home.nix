@@ -7,15 +7,13 @@ in {
 
   imports = [
     ./git.nix
+    ./ssh.nix
     ./vscode.nix
     ./zsh/config.nix
   ];
 
   home.packages = with pkgs; [
-    bat
     exa
-    gnupg
-    jq
     parallel
     pinentry_mac
     protobuf
@@ -27,8 +25,15 @@ in {
     (callPackage ./z.nix {})
   ];
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    bat.enable = true;
+    gpg.enable = true;
+    home-manager.enable = true;
+    htop.enable = true;
+    jq.enable = true;
+    tmux.enable = true;
+    vim.enable = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 }
