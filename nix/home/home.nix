@@ -7,6 +7,7 @@ in {
 
   imports = [
     ./zsh/config.nix
+    ./vscode.nix
   ];
 
   home.packages = with pkgs; [
