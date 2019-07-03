@@ -22,6 +22,7 @@ in {
     awscli
     unzip
 
+    (callPackage ./n.nix {})
     (callPackage ./z.nix {})
   ];
 
