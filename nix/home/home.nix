@@ -10,6 +10,8 @@ in {
   ];
 
   home.packages = with pkgs; [
+    bat
+    exa
     git
     gnupg
     jq
@@ -20,6 +22,8 @@ in {
     python
     awscli
     unzip
+
+    (callPackage ./z.nix {})
   ];
 
   # Let Home Manager install and manage itself.

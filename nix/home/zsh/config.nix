@@ -15,15 +15,6 @@
 
     plugins = [
       {
-        name = "z";
-        src = pkgs.fetchFromGitHub {
-          owner = "rupa";
-          repo = "z";
-          rev = "v1.9";
-          sha256 = "1h0yk0sbv9d571sfkg97wi5q06cpxnhnvh745dlpazpgqi1vb1a8";
-        };
-      }
-      {
         name = "zsh-autosuggestions";
         src = pkgs.fetchFromGitHub {
           owner = "zsh-users";
@@ -55,6 +46,8 @@
     initExtra = ''
       autoload -U promptinit; promptinit
       prompt pure
+
+      . /usr/local/etc/profile.d/z.sh
     '';
   }
 
