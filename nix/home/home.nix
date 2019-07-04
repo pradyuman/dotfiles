@@ -22,8 +22,8 @@ in {
     awscli
     unzip
 
-    (callPackage ./n.nix {})
-    (callPackage ./z.nix {})
+    (callPackage ./packages/n.nix {})
+    (callPackage ./packages/z.nix {})
   ];
 
   programs = {

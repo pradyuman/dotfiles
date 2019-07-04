@@ -14,6 +14,7 @@ lib.mkMerge [{
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "update.mode" = "none";
     };
 
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
