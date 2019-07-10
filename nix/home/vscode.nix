@@ -8,11 +8,14 @@ lib.mkMerge [{
       "editor.tabSize" = 2;
       "editor.formatOnSave" = true;
       "vim.useSystemClipboard" = true;
+      "[javascript]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[javascript]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[scala]" = {
+        "editor.defaultFormatter" = "scalameta.metals";
       };
       "update.mode" = "none";
     };
@@ -53,6 +56,18 @@ lib.mkMerge [{
         publisher = "ms-vscode";
         version = "1.2.1";
         sha256 = "081p212yg1ihgddlvfp7nzzjl7j6mndhva8bwk40jxxzyfmll7rc";
+      }
+      {
+        name = "scala";
+        publisher = "scala-lang";
+        version = "0.3.4";
+        sha256 = "1p2ldayaxyz9q7azlwi9b25a37d6w03q4yrzdpmixklxj5d67pch";
+      }
+      {
+        name = "metals";
+        publisher = "scalameta";
+        version = "1.5.1";
+        sha256 = "0fhynr97haldvk31cf777pcxbvbcqfxzd9jspwczd1xnhh9z0ic6";
       }
       {
         name = "vim";
