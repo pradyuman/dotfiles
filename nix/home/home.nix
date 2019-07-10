@@ -14,6 +14,7 @@ in {
 
   home.packages = with pkgs; [
     exa
+    jdk
     parallel
     pinentry_mac
     protobuf
@@ -21,6 +22,11 @@ in {
     python
     awscli
     unzip
+
+    # Scala
+    coursier
+    sbt
+    scala
 
     (callPackage ./packages/n.nix {})
     (callPackage ./packages/z.nix {})
