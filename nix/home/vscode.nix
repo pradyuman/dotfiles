@@ -60,6 +60,12 @@ lib.mkMerge [{
         version = "1.8.1";
         sha256 = "0gra5sh4ln20fsbmg9hawxsv5c2yd7cw5frhcc2m3p793hgr3lq0";
       }
+      {
+        name = "vscode-proto3";
+        publisher = "zxh404";
+        version = "0.3.0";
+        sha256 = "1iylw9hihqz0pab4iisykgrq20141v5f1r6l4cif1z4237nd3z60";
+      }
     ];
   };
 }
