@@ -87,6 +87,10 @@ lib.mkMerge [{
 }
 
 (lib.mkIf pkgs.stdenv.isDarwin {
+  programs.vscode.userSettings = {
+    "terminal.integrated.shell.osx" = with builtins; "${getEnv "HOME"}/.nix-profile/bin/zsh";
+  };
+
   home.file."Library/Application Support/Code/User/settings.json".source =
     "${config.home.homeDirectory}/.config/Code/User/settings.json";
 })]
