@@ -10,7 +10,7 @@
     enable = true;
 
     localVariables = {
-        GPG_TTY = "$(tty)";
+      GPG_TTY = "$(tty)";
     };
 
     plugins = [

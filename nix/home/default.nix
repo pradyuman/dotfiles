@@ -9,12 +9,13 @@ in {
     ./git.nix
     ./ssh.nix
     ./vscode.nix
-    ./zsh/config.nix
+    ./zsh/default.nix
   ];
 
   home.packages = with pkgs; [
+    docker-compose
     exa
-    jdk
+    openjdk8
     parallel
     pinentry_mac
     protobuf

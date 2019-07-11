@@ -18,6 +18,7 @@ lib.mkMerge [{
         "editor.defaultFormatter" = "scalameta.metals";
       };
       "update.mode" = "none";
+      "metals.javaHome" = pkgs.openjdk8;
     };
 
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
