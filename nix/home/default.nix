@@ -29,6 +29,7 @@ in {
     sbt
     scala
 
+    (callPackage ./packages/grpcui.nix {})
     (callPackage ./packages/n.nix {})
     (callPackage ./packages/z.nix {})
   ];
