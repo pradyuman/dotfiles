@@ -1,12 +1,12 @@
 { stdenv, pkgs, ...}:
 
 stdenv.mkDerivation rec {
+  pname = "z";
   version = "1.11";
-  name = "z-${version}";
 
   src = pkgs.fetchFromGitHub {
     owner = "rupa";
-    repo = "z";
+    repo = pname;
     rev = "v${version}";
     sha256 = "13zbgkj6y0qhvn5jpkrqbd4jjxjr789k228iwma5hjfh1nx7ghyb";
   };
