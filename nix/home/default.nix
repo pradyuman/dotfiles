@@ -15,6 +15,7 @@ in {
   home.packages = with pkgs; [
     docker-compose
     exa
+    grpcui
     openjdk8
     parallel
     pinentry_mac
@@ -23,13 +24,13 @@ in {
     python
     awscli
     unzip
+    wget
 
     # Scala
     coursier
     sbt
     scala
 
-    (callPackage ./packages/grpcui.nix {})
     (callPackage ./packages/n.nix {})
     (callPackage ./packages/z.nix {})
   ];
