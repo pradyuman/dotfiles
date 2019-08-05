@@ -16,9 +16,11 @@ in {
     docker-compose
     exa
     grpcui
+    kubectl
     openjdk8
     parallel
     pinentry_mac
+    postgresql_11
     protobuf
     yarn
     python
