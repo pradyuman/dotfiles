@@ -92,6 +92,14 @@
               "to": {
                 "key_code": "launchpad"
               }
+            },
+            {
+              "from": {
+                "key_code": "left_arrow"
+              },
+              "to": {
+                "key_code": "escape"
+              }
             }
           ]
         }
