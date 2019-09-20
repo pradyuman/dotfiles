@@ -6,6 +6,7 @@ in {
   home.file.".hyper.js".source = "${dotfiles}/.hyper.js";
   home.file.".yabairc".source = "${dotfiles}/.yabairc";
   home.file.".skhdrc".source = "${dotfiles}/.skhdrc";
+  home.file.".config/karabiner/karabiner.json".source = "${dotfiles}/karabiner.json";
 
   imports = [
     ./git.nix
