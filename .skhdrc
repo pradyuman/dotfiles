@@ -1,3 +1,9 @@
+# hhkb2
+0x43 : skhd --key "left"
+0x4B : skhd --key "down"
+home : skhd --key "up"
+pageup : skhd --key "right"
+
 # open terminal
 cmd - return : /Applications/Hyper.app/Contents/MacOS/Hyper --single-instance -d ~
 
