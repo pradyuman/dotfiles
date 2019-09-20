@@ -26,10 +26,10 @@ alt - 0 : yabai -m space --focus 10
 alt - a  : yabai -m display --focus recent
 
 # swap window
-shift + alt - h : yabai -m window --swap west
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - l : yabai -m window --swap east
+cmd + alt - h : yabai -m window --swap west
+cmd + alt - j : yabai -m window --swap south
+cmd + alt - k : yabai -m window --swap north
+cmd + alt - l : yabai -m window --swap east
 
 # move window
 shift + cmd - h : yabai -m window --warp west
