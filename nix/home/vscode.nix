@@ -7,6 +7,9 @@ lib.mkMerge [{
     userSettings = {
       "editor.tabSize" = 2;
       "editor.formatOnSave" = true;
+      "editor.codeActionsOnSave" = {
+        "source.organizeImports" = true;
+	    };
       "vim.useSystemClipboard" = true;
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -75,6 +78,12 @@ lib.mkMerge [{
         publisher = "vscodevim";
         version = "1.8.1";
         sha256 = "0gra5sh4ln20fsbmg9hawxsv5c2yd7cw5frhcc2m3p793hgr3lq0";
+      }
+      {
+        name = "vscode-import-cost";
+        publisher = "wix";
+        version = "2.12.0";
+        sha256 = "1g6k8fxfa49ky8v3l5n6l7p6gnjf9sdd56crcj33p08gb8pyy86l";
       }
       {
         name = "vscode-proto3";
