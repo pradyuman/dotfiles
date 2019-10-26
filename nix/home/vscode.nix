@@ -26,6 +26,12 @@ lib.mkMerge [{
 
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
+        name = "vscode-apollo";
+        publisher = "apollographql";
+        version = "1.12.0";
+        sha256 = "1xvf3zpmvgmbjx85v5wi9r8z0zq6gwb462f63jfjwa8rv45p2bdx";
+      }
+      {
         name = "nix";
         publisher = "bbenoist";
         version = "1.0.1";
@@ -34,8 +40,8 @@ lib.mkMerge [{
       {
         name = "prettier-vscode";
         publisher = "esbenp";
-        version = "1.9.0";
-        sha256 = "1an9dlkicj1s0ffy9l9jdvzpcdl0slvln9k05rd6l8g42ri9fp49";
+        version = "2.3.0";
+        sha256 = "0jv1pzm8bpd7ajvl797gbvxllic1ir8lwc93lq54bdyaizj9sbvz";
       }
       {
         name = "vscode-styled-components";
@@ -50,34 +56,34 @@ lib.mkMerge [{
         sha256 = "1891pg4x5qkh151pylvn93c4plqw6vgasa4g40jbma5xzq8pygr4";
       }
       {
-        name = "graphql-for-vscode";
-        publisher = "kumar-harsh";
-        version = "1.13.2";
-        sha256 = "0bv03p2r6d2z72czplx0q8kmhjjs0i3cmwjf3jrgv324i537xh3z";
+        name = "terraform";
+        publisher = "mauve";
+        version = "1.4.0";
+        sha256 = "0b3cqxaay85ab10x1cg7622rryf4di4d35zq9nqcjg584k6jjb34";
       }
       {
         name = "vscode-typescript-tslint-plugin";
         publisher = "ms-vscode";
-        version = "1.2.1";
-        sha256 = "081p212yg1ihgddlvfp7nzzjl7j6mndhva8bwk40jxxzyfmll7rc";
+        version = "1.2.2";
+        sha256 = "1n2yv37ljaadp84iipv7czzs32dbs4q2vmb98l3z0aan5w2g8x3z";
       }
       {
         name = "scala";
         publisher = "scala-lang";
-        version = "0.3.4";
-        sha256 = "1p2ldayaxyz9q7azlwi9b25a37d6w03q4yrzdpmixklxj5d67pch";
+        version = "0.3.8";
+        sha256 = "17dl10m3ayf57sqgil4mr9fjdm7i8gb5clrs227b768pp2d39ll9";
       }
       {
         name = "metals";
         publisher = "scalameta";
-        version = "1.5.1";
-        sha256 = "0fhynr97haldvk31cf777pcxbvbcqfxzd9jspwczd1xnhh9z0ic6";
+        version = "1.6.0";
+        sha256 = "1ynwsn96dgjn6nwqln5r3vrkvpsv23aza06lss3asd6ynbfijaxl";
       }
       {
         name = "vim";
         publisher = "vscodevim";
-        version = "1.8.1";
-        sha256 = "0gra5sh4ln20fsbmg9hawxsv5c2yd7cw5frhcc2m3p793hgr3lq0";
+        version = "1.11.3";
+        sha256 = "1smzsgcrkhghbnpy51gp28kh74l7y4s2m8pfxabb4ffb751254j0";
       }
       {
         name = "vscode-import-cost";
