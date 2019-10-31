@@ -16,28 +16,35 @@ in {
   ];
 
   home.packages = with pkgs; [
-    docker-compose
+    # Utils
     exa
-    grpcui
-    kubectl
-    openjdk8
+    nmap
     parallel
     pinentry_mac
-    postgresql_11
-    protobuf
-    yarn
-    python
-    awscli
     unzip
     wget
 
-    # Scala
+    (callPackage ./packages/z.nix {})
+
+    # Dev Ops
+    awscli
+    docker-compose
+    grpcui
+    kubectl
+
+    # Programming
     coursier
+    openjdk8
+    protobuf
+    python
     sbt
     scala
+    yarn
 
     (callPackage ./packages/n.nix {})
-    (callPackage ./packages/z.nix {})
+
+    # Databases
+    postgresql_11
   ];
 
   programs = {
