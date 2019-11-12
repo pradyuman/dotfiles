@@ -30,8 +30,8 @@ lib.mkMerge [
                 {
                   name = "prettier-vscode";
                   publisher = "esbenp";
-                  version = "2.3.0";
-                  sha256 = "0jv1pzm8bpd7ajvl797gbvxllic1ir8lwc93lq54bdyaizj9sbvz";
+                  version = "3.2.1";
+                  sha256 = "sha256:1nxciv51vlrbakv0r8fzx9dm6nz83fsrsg87a2fqg28alsqpg2py";
                 }
                 {
                   name = "vscode-styled-components";
@@ -87,6 +87,12 @@ lib.mkMerge [
                   version = "0.3.0";
                   sha256 = "1iylw9hihqz0pab4iisykgrq20141v5f1r6l4cif1z4237nd3z60";
                 }
+                {
+                  name = "vscode-yaml";
+                  publisher = "redhat";
+                  version = "0.5.3";
+                  sha256 = "03swlsp906rqlrx6jf3ibh7pk36sm0zdr8jfy6sr3w5lqjg27gka";
+                }
               ];
             }
           )
@@ -110,6 +116,12 @@ lib.mkMerge [
           };
           "update.mode" = "none";
           "metals.javaHome" = pkgs.openjdk8;
+          "yaml" = {
+            "completion" = true;
+            "format.enable" = true;
+            "schemaStore.enable" = true;
+            "validate" = true;
+          };
         };
       }
   )

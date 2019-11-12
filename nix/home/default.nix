@@ -39,6 +39,7 @@ in {
     python
     sbt
     scala
+    stack
     yarn
 
     (callPackage ./packages/n.nix {})
