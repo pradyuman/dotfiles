@@ -37,8 +37,7 @@ in {
     scala
     stack
     yarn
-
-    (callPackage ./packages/n.nix {})
+    nodejs-12_x
 
     # Databases
     postgresql_11
