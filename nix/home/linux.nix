@@ -2,7 +2,8 @@
 
 (lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
-    netdata
+    lm_sensors
+    psensor
     xclip
   ];
 })
