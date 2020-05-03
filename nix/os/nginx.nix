@@ -22,17 +22,5 @@ in {
     virtualHosts."${hostname}.pradyuman.co" = {
       root = "/home/pradyuman/www";
     };
-
-    virtualHosts."api.aba.${hostname}.pradyuman.co" = {
-      locations."/" = {
-        proxyPass = "http://${hostname}.pradyuman.co:9663/";
-      };
-    };
-
-    virtualHosts."app.aba.${hostname}.pradyuman.co" = {
-      locations."/" = {
-        proxyPass = "http://${hostname}.pradyuman.co:3000/";
-      };
-    };
   };
 }
