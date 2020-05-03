@@ -22,8 +22,6 @@ in {
     unzip
     wget
 
-    (callPackage ./packages/z.nix {})
-
     # Dev Ops
     awscli
     docker-compose

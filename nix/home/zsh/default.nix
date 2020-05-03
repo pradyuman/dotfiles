@@ -1,6 +1,11 @@
 { pkgs, lib, ... }:
 
-{
+let
+  z = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/rupa/z/master/z.sh";
+    sha256 = "0by1377wsvm75z97x7d2sfinsd1gqdgvmlci7c8d4xyrwg8hhvj8";
+  };
+in {
   home.packages = with pkgs; [
     zsh
     (callPackage ./pure-prompt.nix {})
@@ -46,8 +51,7 @@
     initExtra = ''
       autoload -U promptinit; promptinit
       prompt pure
-
-      . /usr/local/etc/profile.d/z.sh
+      source ${z}
     '';
   }
 
