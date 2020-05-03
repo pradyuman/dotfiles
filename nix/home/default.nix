@@ -11,7 +11,7 @@ in {
     ./mac.nix
     ./ssh.nix
     ./vscode.nix
-    ./zsh/default.nix
+    ./zsh.nix
   ];
 
   home.packages = with pkgs; [

@@ -8,7 +8,6 @@ let
 in {
   home.packages = with pkgs; [
     zsh
-    (callPackage ./pure-prompt.nix {})
   ];
 
   programs.zsh = lib.mkMerge [{
@@ -44,6 +43,15 @@ in {
           repo = "zsh-syntax-highlighting";
           rev = "0.6.0";
           sha256 = "0zmq66dzasmr5pwribyh4kbkk23jxbpdw4rjxx0i7dx8jjp2lzl4";
+        };
+      }
+      {
+        name = "pure";
+        src = pkgs.fetchFromGitHub {
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "v1.12.0";
+          sha256 = "1h04z7rxmca75sxdfjgmiyf1b5z2byfn6k4srls211l0wnva2r5y";
         };
       }
     ];
