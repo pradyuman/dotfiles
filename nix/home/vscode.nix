@@ -53,8 +53,8 @@ lib.mkMerge [{
       {
         name = "vscode-apollo";
         publisher = "apollographql";
-        version = "1.12.1";
-        sha256 = "0kqqai34cwwp763zpcs3ij4waglr2isljxi6sqjh3dl9wbxk4lda";
+        version = "1.15.4";
+        sha256 = "1l1blw5sdp7rb0xcbh5cs6kigwvnzfzd6ri2mah9m01sys4yl0nw";
       }
       {
         name = "nix";
@@ -63,22 +63,28 @@ lib.mkMerge [{
         sha256 = "0zd0n9f5z1f0ckzfjr38xw2zzmcxg1gjrava7yahg5cvdcw6l35b";
       }
       {
+        name = "gitlens";
+        publisher = "eamodio";
+        version = "10.2.1";
+        sha256 = "1bh6ws20yi757b4im5aa6zcjmsgdqxvr1rg86kfa638cd5ad1f97";
+      }
+      {
         name = "vscode-eslint";
         publisher = "dbaeumer";
-        version = "1.9.1";
-        sha256 = "0q3vnqmik1228zsy7favzsr3xpaci3z1zh38m79cpy5rac5bcr62";
+        version = "2.1.5";
+        sha256 = "1fr8n736pfjnxz7kgi6m86d2w6z1bwxa23xpfcd8sik9nnrnsz59";
       }
       {
         name = "vscode-styled-components";
         publisher = "jpoissonnier";
-        version = "0.0.26";
-        sha256 = "09lgc1fjdrgzw6n72w833kyfk7m0008lmd17r0vljcd572igfhhc";
+        version = "0.0.29";
+        sha256 = "1cvhvlx501clvxxqymliay469fphdw22cyar6qiph9iv5qpswxva";
       }
       {
         name = "language-haskell";
         publisher = "justusadam";
-        version = "2.6.0";
-        sha256 = "1891pg4x5qkh151pylvn93c4plqw6vgasa4g40jbma5xzq8pygr4";
+        version = "3.2.0";
+        sha256 = "190h1hky2yy5n00ncqf15mmaizgpm3w9pzvasmi2gangpg4qb6y5";
       }
       {
         name = "terraform";
@@ -87,22 +93,28 @@ lib.mkMerge [{
         sha256 = "0b3cqxaay85ab10x1cg7622rryf4di4d35zq9nqcjg584k6jjb34";
       }
       {
+        name = "vscode-kubernetes-tools";
+        publisher = "ms-kubernetes-tools";
+        version = "1.2.0";
+        sha256 = "1cvh1cidqglvk5bcrwx9jgk73d64pj278wxyz4llpzfdns4hmcqr";
+      }
+      {
         name = "scala";
         publisher = "scala-lang";
-        version = "0.3.8";
-        sha256 = "17dl10m3ayf57sqgil4mr9fjdm7i8gb5clrs227b768pp2d39ll9";
+        version = "0.3.9";
+        sha256 = "0l6zrpp2klqdym977zygmbzf0478lbqmivcxa2xmqyi34c9vwli7";
       }
       {
         name = "metals";
         publisher = "scalameta";
-        version = "1.6.0";
-        sha256 = "1ynwsn96dgjn6nwqln5r3vrkvpsv23aza06lss3asd6ynbfijaxl";
+        version = "1.9.0";
+        sha256 = "0p2wbnw98zmjbfiz4mi1mh131s78r01kjnja339lwdigqxg88gi6";
       }
       {
         name = "vim";
         publisher = "vscodevim";
-        version = "1.11.3";
-        sha256 = "1smzsgcrkhghbnpy51gp28kh74l7y4s2m8pfxabb4ffb751254j0";
+        version = "1.14.1";
+        sha256 = "179kqs6qpm57d43i02l25mga9rxk0cmmzxbl0ydgdjw7xlk2r0i1";
       }
       {
         name = "vscode-import-cost";
@@ -113,14 +125,14 @@ lib.mkMerge [{
       {
         name = "vscode-proto3";
         publisher = "zxh404";
-        version = "0.3.0";
-        sha256 = "1iylw9hihqz0pab4iisykgrq20141v5f1r6l4cif1z4237nd3z60";
+        version = "0.4.2";
+        sha256 = "05da62iahnnjxkgdav14c1gn90lkgyk9gc5rardsqijx2x6dgjn0";
       }
       {
         name = "vscode-yaml";
         publisher = "redhat";
-        version = "0.5.3";
-        sha256 = "03swlsp906rqlrx6jf3ibh7pk36sm0zdr8jfy6sr3w5lqjg27gka";
+        version = "0.8.0";
+        sha256 = "08dy5wm24c3bga698925pjwbymdmxi00a84d6xajj750pax7grz0";
       }
     ];
   };
