@@ -7,10 +7,10 @@ lib.mkMerge [{
     userSettings = {
       "editor.tabSize" = 2;
       "editor.formatOnSave" = true;
-      "editor.codeActionsOnSave" = {
-        "source.organizeImports" = true;
-	    };
-      "eslint.autoFixOnSave" = true;
+      "editor.codeActionsOnSave" = [
+        "source.organizeImports"
+        "source.fixAll.eslint"
+      ];
       "eslint.validate" = [
         "javascript"
         "javascriptreact"
