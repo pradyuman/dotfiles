@@ -7,18 +7,36 @@
 
   services.xserver = {
     enable = true;
+    displayManager.defaultSession = "xfce";
+    desktopManager.xfce.enable = true;
+  };
 
-    displayManager = {
-      defaultSession = "xfce";
+  hardware = {
+    enableAllFirmware = true;
+    cpu.amd.updateMicrocode = true;
+
+    bluetooth = {
+      enable = true;
+      config = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
+      };
     };
 
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
+    pulseaudio = {
+      enable = true;
+      package = pkgs.pulseaudioFull;
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+      extraConfig = ''
+        load-module module-switch-on-connect
+      '';
     };
   };
 
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-
+  networking.wireless.enable = true;
+  sound.enable = true;
   time.timeZone = "America/Chicago";
+
+  nixpkgs.config.allowUnfree = true;
 }
