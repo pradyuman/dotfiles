@@ -2,8 +2,21 @@
 
 (lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
+    keybase-gui
     lm_sensors
     psensor
     xclip
+
+    # Build
+    binutils
+    cmake
+    pkg-config
+    gcc
+    gnumake
   ];
+
+  services = {
+    kbfs.enable = true;
+    keybase.enable = true;
+  };
 })
