@@ -2,6 +2,8 @@
 
 (lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
+    # General
+    chromium
     keybase-gui
     lm_sensors
     psensor

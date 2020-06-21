@@ -7,6 +7,7 @@ in {
 
   imports = [
     ./git.nix
+    ./gpg.nix
     ./linux.nix
     ./mac.nix
     ./ssh.nix
@@ -17,8 +18,11 @@ in {
   home.packages = with pkgs; [
     # Utils
     exa
+    fzf
     nmap
     parallel
+    pciutils
+    pinentry-gtk2
     unzip
     wget
 
@@ -45,7 +49,6 @@ in {
 
   programs = {
     bat.enable = true;
-    gpg.enable = true;
     htop.enable = true;
     jq.enable = true;
     tmux.enable = true;
