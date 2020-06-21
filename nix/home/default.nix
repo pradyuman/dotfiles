@@ -3,17 +3,22 @@
 let
   dotfiles = "${config.home.homeDirectory}/dotfiles";
 in {
-  home.file.".hyper.js".source = "${dotfiles}/.hyper.js";
-
   imports = [
     ./git.nix
     ./gpg.nix
     ./linux.nix
     ./mac.nix
     ./ssh.nix
+    ./vim.nix
     ./vscode.nix
     ./zsh.nix
   ];
+
+  home.sessionVariables = {
+    EDITOR = "vim";
+  };
+
+  home.file.".hyper.js".source = "${dotfiles}/.hyper.js";
 
   home.packages = with pkgs; [
     # Utils

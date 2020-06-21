@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  environment = {
-    systemPackages = with pkgs; [
-      curl
-      vim
-      wget
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    wget
+  ];
 
   services.xserver = {
     enable = true;
@@ -21,6 +17,8 @@
       xfce.enable = true;
     };
   };
+
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   time.timeZone = "America/Chicago";
 }
