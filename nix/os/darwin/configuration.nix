@@ -9,8 +9,26 @@
   environment.systemPackages = [ pkgs.vim ];
   programs.zsh.enable = true;
 
-  system.keyboard = {
-    enableKeyMapping = true;
-    remapCapsLockToControl = true;
+  system = {
+    defaults = {
+      finder._FXShowPosixPathInTitle = true;
+      loginwindow.GuestEnabled = false;
+
+      NSGlobalDomain = {
+        "com.apple.swipescrolldirection" = false;
+        _HIHideMenuBar = true;
+      };
+
+      dock = {
+        autohide = true;
+        launchanim = false;
+        mru-spaces = false;
+      };
+    };
+
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
   };
 }
