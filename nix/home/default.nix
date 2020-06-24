@@ -6,12 +6,13 @@ in {
   imports = [
     ./git.nix
     ./gpg.nix
-    ./linux.nix
-    ./mac.nix
     ./ssh.nix
     ./vim.nix
     ./vscode.nix
     ./zsh.nix
+
+    ./os-specific/linux.nix
+    ./os-specific/darwin.nix
   ];
 
   home.sessionVariables = {

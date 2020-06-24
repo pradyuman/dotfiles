@@ -3,6 +3,7 @@
 (lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
     # General
+    chromium
     keybase-gui
 
     # Utils
@@ -19,8 +20,6 @@
     gcc
     gnumake
   ];
-
-  programs.chromium.enable = true;
 
   services = {
     gpg-agent.enable = true;
