@@ -10,6 +10,15 @@
     displayManager.defaultSession = "xfce";
     desktopManager.xfce.enable = true;
   };
+  
+  services.blueman.enable = true;
+  
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    extraModprobeConfig = ''
+      options iwlwifi bt_coex_active=0
+    '';
+  };
 
   hardware = {
     enableAllFirmware = true;
