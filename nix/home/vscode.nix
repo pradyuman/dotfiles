@@ -134,6 +134,12 @@ lib.mkMerge [{
         version = "0.8.0";
         sha256 = "08dy5wm24c3bga698925pjwbymdmxi00a84d6xajj750pax7grz0";
       }
+      {
+        name = "xml";
+        publisher = "DotJoshJohnson";
+        version = "2.5.0";
+        sha256 = "1fifdxgfqf3sw6rhbsvcsl8p39hnarcl0akapa94a8axrg9bdwca";
+      }
     ];
   };
 }

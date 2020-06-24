@@ -3,9 +3,12 @@
 (lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
     # General
-    chromium
     keybase-gui
+
+    # Utils
     lm_sensors
+    pciutils
+    pinentry-gtk2
     psensor
     xclip
 
@@ -17,7 +20,10 @@
     gnumake
   ];
 
+  programs.chromium.enable = true;
+
   services = {
+    gpg-agent.enable = true;
     kbfs.enable = true;
     keybase.enable = true;
   };

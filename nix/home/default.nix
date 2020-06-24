@@ -26,8 +26,6 @@ in {
     fzf
     nmap
     parallel
-    pciutils
-    pinentry-gtk2
     unzip
     wget
 
