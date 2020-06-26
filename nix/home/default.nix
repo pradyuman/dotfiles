@@ -10,7 +10,6 @@ in {
     ./vim.nix
     ./vscode.nix
     ./zsh.nix
-    ./test.nix
 
     ./os-specific/linux.nix
     ./os-specific/darwin.nix 
