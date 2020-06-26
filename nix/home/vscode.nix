@@ -88,9 +88,9 @@ lib.mkMerge [{
       }
       {
         name = "terraform";
-        publisher = "mauve";
-        version = "1.4.0";
-        sha256 = "0b3cqxaay85ab10x1cg7622rryf4di4d35zq9nqcjg584k6jjb34";
+        publisher = "HashiCorp";
+        version = "2.0.2";
+        sha256 = "0dfwg5j8jm1ywiknsasrfbsrbl0ax8bbjm7pyrp9n05l6y7r29cy";
       }
       {
         name = "vscode-kubernetes-tools";

@@ -10,6 +10,7 @@ in {
     ./vim.nix
     ./vscode.nix
     ./zsh.nix
+    ./test.nix
 
     ./os-specific/linux.nix
     ./os-specific/darwin.nix 
@@ -25,15 +26,18 @@ in {
     # Utils
     exa
     fzf
+    jq
     nmap
     parallel
     unzip
     wget
+    yq
 
     # Dev Ops
     awscli
     docker-compose
     grpcui
+    jx
     kubectl
 
     # Programming
