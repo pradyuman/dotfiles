@@ -3,7 +3,7 @@
 let
   z = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/rupa/z/master/z.sh";
-    sha256 = "0by1377wsvm75z97x7d2sfinsd1gqdgvmlci7c8d4xyrwg8hhvj8";
+    sha256 = "1n79c57a14zaai563f0ynv5hil53xya883g7z0ny60yh6c6gigga";
   };
 in {
   home.packages = with pkgs; [
