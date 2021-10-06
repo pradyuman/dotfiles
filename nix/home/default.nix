@@ -28,16 +28,17 @@ in {
     jq
     nmap
     parallel
+    rename
     unzip
     wget
-    yq
 
     # Dev Ops
-    awscli
+    caddy
     docker-compose
     grpcui
-    jx
     kubectl
+    ngrok
+    nssTools
 
     # Programming
     coursier
@@ -48,10 +49,14 @@ in {
     scala
     stack
     yarn
-    nodejs-12_x
+    nodejs-14_x
 
     # Databases
     postgresql_11
+    redis
+
+    # Ops
+    # stripe-cli
   ];
 
   programs = {

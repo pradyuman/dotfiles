@@ -55,7 +55,7 @@ in {
 
     initExtra = ''
       . $HOME/.nix-profile/etc/profile.d/nix.sh
-      . $HOME/abacus/secrets/dev.env
+      . $HOME/nova/secrets/dev.env
     '';
   })];
 }

@@ -63,6 +63,12 @@ lib.mkMerge [{
         sha256 = "0zd0n9f5z1f0ckzfjr38xw2zzmcxg1gjrava7yahg5cvdcw6l35b";
       }
       {
+        name = "cssrem";
+        publisher = "cipchk";
+        version = "2.1.0";
+        sha256 = "1h2xkia5g11xcm43q7sndgq06bx2x8sqw84axg4ksazj7ww1fgvs";
+      }
+      {
         name = "gitlens";
         publisher = "eamodio";
         version = "10.2.1";
@@ -73,6 +79,12 @@ lib.mkMerge [{
         publisher = "dbaeumer";
         version = "2.1.5";
         sha256 = "1fr8n736pfjnxz7kgi6m86d2w6z1bwxa23xpfcd8sik9nnrnsz59";
+      }
+      {
+        name = "terraform";
+        publisher = "HashiCorp";
+        version = "2.3.0";
+        sha256 = "0696q8nr6kb5q08295zvbqwj7lr98z18gz1chf0adgrh476zm6qq";
       }
       {
         name = "vscode-styled-components";
@@ -87,16 +99,22 @@ lib.mkMerge [{
         sha256 = "190h1hky2yy5n00ncqf15mmaizgpm3w9pzvasmi2gangpg4qb6y5";
       }
       {
-        name = "terraform";
-        publisher = "HashiCorp";
-        version = "2.0.2";
-        sha256 = "0dfwg5j8jm1ywiknsasrfbsrbl0ax8bbjm7pyrp9n05l6y7r29cy";
+        name = "vscode-docker";
+        publisher = "ms-azuretools";
+        version = "1.8.1";
+        sha256 = "08691mwb3kgmk5fnjpw1g3a5i7qwalw1yrv2skm519wh62w6nmw8";
       }
       {
         name = "vscode-kubernetes-tools";
         publisher = "ms-kubernetes-tools";
         version = "1.2.0";
         sha256 = "1cvh1cidqglvk5bcrwx9jgk73d64pj278wxyz4llpzfdns4hmcqr";
+      }
+      {
+        name = "prisma";
+        publisher = "prisma";
+        version = "2.11.1";
+        sha256 = "0ixs0fg82f6xk7fhfa0waqhsf2ip0z9rb3xhbdsgv3jd667ppkr1";
       }
       {
         name = "scala";
