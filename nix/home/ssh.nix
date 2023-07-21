@@ -1,9 +1,14 @@
 {
   programs.ssh = {
     enable = true;
-    extraConfig = ''
-      AddKeysToAgent yes
-      IdentityFile ~/.ssh/id_rsa
-    '';
+
+    matchBlocks.github = {
+      host = "github.com";
+      identityFile = "~/.ssh/id_ed25519";
+      extraOptions = {
+        AddKeysToAgent = "yes";
+        UseKeychain = "yes";
+      };
+    };
   };
 }

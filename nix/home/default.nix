@@ -19,48 +19,27 @@ in {
     EDITOR = "vim";
   };
 
-  home.file.".hyper.js".source = "${dotfiles}/.hyper.js";
-
   home.packages = with pkgs; [
     # Utils
-    exa
-    fzf
-    jq
     nmap
-    parallel
-    rename
     unzip
     wget
 
-    # Dev Ops
-    caddy
-    docker-compose
-    grpcui
-    kubectl
-    ngrok
-    nssTools
+    # Node
+    nodejs_20
+    nodePackages.pnpm
 
-    # Programming
+    # Scala
     coursier
-    openjdk8
-    protobuf
-    python
     sbt
     scala
-    stack
-    yarn
-    nodejs-14_x
 
-    # Databases
-    postgresql_11
-    redis
-
-    # Ops
-    # stripe-cli
   ];
 
   programs = {
     bat.enable = true;
+    exa.enable = true;
+    fzf.enable = true;
     htop.enable = true;
     jq.enable = true;
     tmux.enable = true;

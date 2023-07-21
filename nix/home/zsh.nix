@@ -3,7 +3,7 @@
 let
   z = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/rupa/z/master/z.sh";
-    sha256 = "1n79c57a14zaai563f0ynv5hil53xya883g7z0ny60yh6c6gigga";
+    sha256 = "mORDjNMa+zzllBMDNef72L5dddmlPk8+CE2X5rjRmw4=";
   };
 in {
   home.packages = with pkgs; [
@@ -54,7 +54,6 @@ in {
     };
 
     initExtra = ''
-      . $HOME/.nix-profile/etc/profile.d/nix.sh
       . $HOME/nova/secrets/dev.env
     '';
   })];
