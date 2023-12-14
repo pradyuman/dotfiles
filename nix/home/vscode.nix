@@ -49,8 +49,9 @@
       bbenoist.nix
       eamodio.gitlens
       dbaeumer.vscode-eslint
-      hashicorp.terraform
+      github.copilot
       ms-azuretools.vscode-docker
+      ms-vscode-remote.remote-containers
       prisma.prisma
       redhat.vscode-yaml
       scala-lang.scala

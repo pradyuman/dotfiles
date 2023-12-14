@@ -7,6 +7,7 @@ in {
     ./git.nix
     ./gpg.nix
     ./ssh.nix
+    ./starship.nix
     ./vim.nix
     ./vscode.nix
     ./zsh.nix
@@ -21,24 +22,20 @@ in {
 
   home.packages = with pkgs; [
     # Utils
+    just
     nmap
     unzip
     wget
+    zoxide
 
     # Node
     nodejs_20
     nodePackages.pnpm
-
-    # Scala
-    coursier
-    sbt
-    scala
-
   ];
 
   programs = {
     bat.enable = true;
-    exa.enable = true;
+    eza.enable = true;
     fzf.enable = true;
     htop.enable = true;
     jq.enable = true;

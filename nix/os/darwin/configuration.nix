@@ -15,7 +15,6 @@
     home = "/Users/pmn";
   };
 
-
   home-manager.users.pmn = { pkgs, ... }: {
     imports = [ ../../home/default.nix ];
     home.stateVersion = "23.05";
@@ -36,11 +35,6 @@
         launchanim = false;
         mru-spaces = false;
       };
-    };
-
-    keyboard = {
-      enableKeyMapping = true;
-      remapCapsLockToControl = true;
     };
   };
 }

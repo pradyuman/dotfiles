@@ -4,7 +4,7 @@
   programs.gpg = {
     enable = true;
     settings = {
-      default-key = "4F74D5361C4CA31E";
+      default-key = "4378CA1B422BBB4C";
     };
   };
 }
