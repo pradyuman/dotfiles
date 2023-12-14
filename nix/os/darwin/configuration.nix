@@ -4,6 +4,7 @@
   imports = [
     ./yabai.nix
     ./skhd.nix
+    ./homebrew.nix
     <home-manager/nix-darwin>
   ];
 
