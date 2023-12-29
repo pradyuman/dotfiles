@@ -5,56 +5,59 @@
     enable = true;
 
     userSettings = {
-      "editor.codeActionsOnSave" = [
-        "source.organizeImports"
-        "source.fixAll.eslint"
-      ];
-      "editor.formatOnSave" = true;
+      "editor.fontFamily" = "Hasklig, Menlo, Monaco, 'Courier New', monospace";
+      "editor.fontLigatures" = true;
       "editor.tabSize" = 2;
-      "eslint.validate" = [
-        "javascript"
-        "javascriptreact"
-        "typescript"
-        "typescriptreact"
-      ];
+      "editor.formatOnSave" = true;
+      "editor.codeActionsOnSave" = {
+        "source.organizeImports" = "explicit";
+        "source.fixAll.eslint" = "explicit";
+      };
       "eslint.workingDirectories" = [
         { "mode" = "auto"; }
       ];
-      "vim.useSystemClipboard" = true;
       "[javascript]" = {
-        "editor.formatOnSave" = false;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "[javascriptreact]" = {
-        "editor.formatOnSave" = false;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "[typescript]" = {
-        "editor.formatOnSave" = false;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "[typescriptreact]" = {
-        "editor.formatOnSave" = false;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "[scala]" = {
         "editor.defaultFormatter" = "scalameta.metals";
       };
       "update.mode" = "none";
-      "metals.javaHome" = pkgs.openjdk8;
+      "vim.useSystemClipboard" = true;
       "yaml.completion" = true;
       "yaml.format.enable" = true;
       "yaml.schemaStore.enable" = true;
       "yaml.validate" = true;
+
+      # Metals
+      "metals.javaHome" = pkgs.openjdk8;
+      "files.watcherExclude" = {
+        "**/.bloop" = true;
+        "**/.metals" = true;
+        "**/.ammonite" = true;
+      };
     };
 
     extensions = with pkgs.vscode-extensions; [
       apollographql.vscode-apollo
       bbenoist.nix
       eamodio.gitlens
+      esbenp.prettier-vscode
       dbaeumer.vscode-eslint
       github.copilot
       ms-azuretools.vscode-docker
       ms-vscode-remote.remote-containers
       prisma.prisma
       redhat.vscode-yaml
-      scala-lang.scala
       scalameta.metals
       styled-components.vscode-styled-components
       vscodevim.vim
