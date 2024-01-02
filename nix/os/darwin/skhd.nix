@@ -3,54 +3,54 @@
     enable = true;
     skhdConfig = ''
       # focus window
-      alt - h : yabai -m window --focus west
-      alt - j : yabai -m window --focus south
-      alt - k : yabai -m window --focus north
-      alt - l : yabai -m window --focus east
-      alt - a : yabai -m window --focus recent
+      ctrl - h : yabai -m window --focus west
+      ctrl - j : yabai -m window --focus south
+      ctrl - k : yabai -m window --focus north
+      ctrl - l : yabai -m window --focus east
+      ctrl - a : yabai -m window --focus recent
 
       # focus monitor
-      alt - 1 : yabai -m display --focus 1
-      alt - 2 : yabai -m display --focus 2
-      alt - 3 : yabai -m display --focus 3
+      ctrl - 1 : yabai -m display --focus 1
+      ctrl - 2 : yabai -m display --focus 2
+      ctrl - 3 : yabai -m display --focus 3
 
       # swap window
-      cmd + alt - h : yabai -m window --swap west
-      cmd + alt - j : yabai -m window --swap south
-      cmd + alt - k : yabai -m window --swap north
-      cmd + alt - l : yabai -m window --swap east
+      cmd + ctrl - h : yabai -m window --swap west
+      cmd + ctrl - j : yabai -m window --swap south
+      cmd + ctrl - k : yabai -m window --swap north
+      cmd + ctrl - l : yabai -m window --swap east
 
       # move window
-      shift + alt - h : yabai -m window --warp west
-      shift + alt - j : yabai -m window --warp south
-      shift + alt - k : yabai -m window --warp north
-      shift + alt - l : yabai -m window --warp east
+      shift + ctrl - h : yabai -m window --warp west
+      shift + ctrl - j : yabai -m window --warp south
+      shift + ctrl - k : yabai -m window --warp north
+      shift + ctrl - l : yabai -m window --warp east
 
       # balance size of windows
-      alt - z : yabai -m space --balance
+      ctrl - q : yabai -m space --balance
 
       # rotate tree
-      alt - r : yabai -m space --rotate 90
+      ctrl - w : yabai -m space --rotate 90
 
       # mirror tree y-axis
-      alt - y : yabai -m space --mirror y-axis
+      ctrl - t : yabai -m space --mirror y-axis
 
       # mirror tree x-axis
-      alt - x : yabai -m space --mirror x-axis
+      ctrl - y : yabai -m space --mirror x-axis
 
       # send window to monitor and follow focus
       # ctrl + cmd - x  : yabai -m window --display recent; yabai -m display --focus recent
       # ctrl + cmd - z  : yabai -m window --display prev; yabai -m display --focus prev
       # ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
-      cmd + alt - 1 : yabai -m window --display 1; yabai -m display --focus 1
-      cmd + alt - 2 : yabai -m window --display 2; yabai -m display --focus 2
-      cmd + alt - 3 : yabai -m window --display 3; yabai -m display --focus 3
+      cmd + ctrl - 1 : yabai -m window --display 1; yabai -m display --focus 1
+      cmd + ctrl - 2 : yabai -m window --display 2; yabai -m display --focus 2
+      cmd + ctrl - 3 : yabai -m window --display 3; yabai -m display --focus 3
 
       # toggle window fullscreen zoom
-      alt - f : yabai -m window --toggle zoom-fullscreen
+      ctrl - f : yabai -m window --toggle zoom-fullscreen
 
       # toggle window split type
-      alt - e : yabai -m window --toggle split
+      ctrl - e : yabai -m window --toggle split
 
       ####
       # these rely on SIP being disabled
