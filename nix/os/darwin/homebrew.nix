@@ -10,6 +10,7 @@
       "discord"
       "figma"
       "spotify"
+      "wezterm"
     ];
   };
 
