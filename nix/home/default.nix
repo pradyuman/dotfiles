@@ -10,6 +10,7 @@ in {
     ./starship.nix
     ./vim.nix
     ./vscode.nix
+    ./zellij.nix
     ./zsh.nix
 
     ./os-specific/linux.nix

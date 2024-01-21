@@ -27,16 +27,16 @@
       shift + ctrl - l : yabai -m window --warp east
 
       # balance size of windows
-      ctrl - q : yabai -m space --balance
+      cmd + ctrl - r : yabai -m space --balance
 
       # rotate tree
       ctrl - w : yabai -m space --rotate 90
 
       # mirror tree y-axis
-      ctrl - t : yabai -m space --mirror y-axis
+      # ctrl - t : yabai -m space --mirror y-axis
 
       # mirror tree x-axis
-      ctrl - y : yabai -m space --mirror x-axis
+      # ctrl - y : yabai -m space --mirror x-axis
 
       # send window to monitor and follow focus
       # ctrl + cmd - x  : yabai -m window --display recent; yabai -m display --focus recent
