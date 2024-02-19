@@ -54,6 +54,7 @@
       esbenp.prettier-vscode
       dbaeumer.vscode-eslint
       github.copilot
+      mattn.lisp
       ms-azuretools.vscode-docker
       ms-vscode-remote.remote-containers
       prisma.prisma

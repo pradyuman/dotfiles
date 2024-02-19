@@ -16,7 +16,7 @@
   };
 
   home-manager.users.pmn = { pkgs, ... }: {
-    imports = [ ../../home/default.nix ];
+    imports = [ ../../home ];
     home.stateVersion = "23.05";
   };
 

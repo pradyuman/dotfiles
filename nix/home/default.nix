@@ -4,6 +4,7 @@ let
   dotfiles = "${config.home.homeDirectory}/dotfiles";
 in {
   imports = [
+    ./emacs
     ./git.nix
     ./gpg.nix
     ./ssh.nix

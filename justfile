@@ -6,3 +6,6 @@ init-nix-darwin hostname:
   nix run nix-darwin \
     --extra-experimental-features 'nix-command flakes' \
     -- switch --flake ./nix
+
+darwin-rebuild *args:
+  darwin-rebuild {{ args }} --flake ./nix

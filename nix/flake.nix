@@ -13,19 +13,35 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    doomemacs = {
+      url = "github:doomemacs/doomemacs";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }: {
-
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    nix-darwin,
+    home-manager,
+    ...
+  }: {
     darwinConfigurations.astraea = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin"; };
       modules = [ 
-        home-manager.darwinModules.home-manager
         ./os/darwin/configuration.nix
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
       ];
-      specialArgs = { inherit inputs; };
     };
-
   };
 }
