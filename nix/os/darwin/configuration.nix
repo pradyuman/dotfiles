@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, home-manager, ... }:
 
 {
   imports = [
     ./yabai.nix
     ./skhd.nix
     ./homebrew.nix
-    <home-manager/nix-darwin>
   ];
 
   environment.systemPackages = [ pkgs.vim ];
@@ -20,6 +19,8 @@
     imports = [ ../../home/default.nix ];
     home.stateVersion = "23.05";
   };
+
+  services.nix-daemon.enable = true;
 
   system = {
     defaults = {

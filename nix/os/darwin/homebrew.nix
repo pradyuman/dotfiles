@@ -1,6 +1,6 @@
-{
-  imports = [ <home-manager/nix-darwin> ];
+{ home-manager, ... }:
 
+{
   homebrew = {
     enable = true;
 
@@ -9,7 +9,6 @@
       "arc"
       "discord"
       "figma"
-      "spotify"
       "wezterm"
     ];
   };
