@@ -22,6 +22,8 @@ in {
       fd # faster projectile indexing
 
       # For Doom modules
+      (aspellWithDicts (ds: with ds; [en en-computers en-science])) # :checkers spell
+      cmake # :term vterm
       coreutils-prefixed # :emacs dired
       gnugrep # :completion vertico
       nixfmt # :lang nix
