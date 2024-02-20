@@ -13,7 +13,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,11 +36,11 @@
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin"; };
       modules = [ 
-        ./os/darwin/configuration.nix
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.extraSpecialArgs = { inherit inputs; };
-        }
+      ./os/darwin/configuration.nix
+      home-manager.darwinModules.home-manager
+      {
+        home-manager.extraSpecialArgs = { inherit inputs; };
+      }
       ];
     };
   };
