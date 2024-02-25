@@ -48,3 +48,7 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+
+(package! flymake-eslint)
+
+(package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
