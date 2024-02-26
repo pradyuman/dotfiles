@@ -50,5 +50,6 @@
 ;; (unpin! t)
 
 (package! flymake-eslint)
+(package! rainbow-mode)
 
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
