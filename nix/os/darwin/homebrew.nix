@@ -9,6 +9,7 @@
       "arc"
       "discord"
       "figma"
+      "numi"
       "wezterm"
     ];
   };
