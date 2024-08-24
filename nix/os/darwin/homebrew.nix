@@ -7,6 +7,7 @@
     casks = [
       "1password"
       "arc"
+      "cursor"
       "discord"
       "figma"
       "numi"
