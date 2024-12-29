@@ -35,6 +35,9 @@ in
     # Node
     nodejs_20
     nodePackages.pnpm
+
+    # LLM
+    aider-chat
   ];
 
   programs = {

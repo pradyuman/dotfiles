@@ -92,3 +92,7 @@
   (typescript-ts-mode tsx-ts-mode)
   (typescript-ts-mode . rainbow-delimiters-mode)
   (tsx-ts-mode . rainbow-delimiters-mode))
+
+(use-package aider
+  :config
+  (setq aider-args '("--model" "anthropic/claude-3-5-sonnet-20241022")))

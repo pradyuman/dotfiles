@@ -53,3 +53,8 @@
 (package! rainbow-mode)
 
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
+
+(package! aider
+  :recipe (:host github
+           :repo "tninja/aider.el"
+           :files ("aider.el" "aider-doom.el")))
