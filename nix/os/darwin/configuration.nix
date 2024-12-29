@@ -1,4 +1,9 @@
-{ config, pkgs, home-manager, ... }:
+{
+  config,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
   imports = [
@@ -7,7 +12,10 @@
     ./homebrew.nix
   ];
 
-  environment.systemPackages = [ pkgs.vim ];
+  environment.systemPackages = with pkgs; [
+    vim
+    nixfmt-rfc-style
+  ];
   programs.zsh.enable = true;
 
   users.users.pmn = {
@@ -15,14 +23,17 @@
     home = "/Users/pmn";
   };
 
-  home-manager.users.pmn = { pkgs, ... }: {
-    imports = [ ../../home ];
-    home.stateVersion = "23.05";
-  };
+  home-manager.users.pmn =
+    { pkgs, ... }:
+    {
+      imports = [ ../../home ];
+      home.stateVersion = "23.05";
+    };
 
   services.nix-daemon.enable = true;
 
   system = {
+    stateVersion = 5;
     defaults = {
       finder._FXShowPosixPathInTitle = true;
       loginwindow.GuestEnabled = false;

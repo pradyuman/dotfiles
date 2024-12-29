@@ -1,10 +1,16 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 # To get this to work, you need a DNS A Record to the Local IP
 
 let
   hostname = lib.toLower config.networking.hostName;
-in {
+in
+{
   networking = {
     networkmanager = {
       enable = true;

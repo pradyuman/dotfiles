@@ -1,8 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   dotfiles = "${config.home.homeDirectory}/dotfiles";
-in (lib.mkIf pkgs.stdenv.isDarwin {
+in
+(lib.mkIf pkgs.stdenv.isDarwin {
   home.file.".gnupg/gpg-agent.conf" = {
     text = "pinentry-program ${pkgs.pinentry_mac}/${pkgs.pinentry_mac.passthru.binaryPath}";
   };

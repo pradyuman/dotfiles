@@ -99,6 +99,6 @@
 
       # destroy desktop
       # cmd + alt - w : yabai -m space --destroy
-      '';
+    '';
   };
 }

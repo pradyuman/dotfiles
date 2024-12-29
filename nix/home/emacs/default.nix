@@ -1,11 +1,19 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
-  emacsPkg = with pkgs;
-    ((emacsPackagesFor emacsDarwin).emacsWithPackages (epkgs: [ epkgs.vterm ]));
-in {
-  nixpkgs.overlays =
-    [ inputs.emacs-overlay.overlay (import ../../overlays/emacs-darwin.nix) ];
+  emacsPkg = with pkgs; ((emacsPackagesFor emacsDarwin).emacsWithPackages (epkgs: [ epkgs.vterm ]));
+in
+{
+  nixpkgs.overlays = [
+    inputs.emacs-overlay.overlay
+    (import ../../overlays/emacs-darwin.nix)
+  ];
 
   home = {
     packages = with pkgs; [
@@ -19,8 +27,13 @@ in {
       fd # faster projectile indexing
 
       # For Doom modules
-      (aspellWithDicts
-        (ds: with ds; [ en en-computers en-science ])) # :checkers spell
+      (aspellWithDicts (
+        ds: with ds; [
+          en
+          en-computers
+          en-science
+        ]
+      )) # :checkers spell
       cmake # :term vterm
       coreutils-prefixed # :emacs dired
       gnugrep # :completion vertico
@@ -36,7 +49,9 @@ in {
       nodePackages.typescript-language-server
     ];
 
-    shellAliases = { e = "emacsclient -n"; };
+    shellAliases = {
+      e = "emacsclient -n";
+    };
 
     activation.installDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${inputs.doomemacs}/ ${config.xdg.configHome}/emacs/
@@ -62,10 +77,8 @@ in {
         "-c"
         "${emacsPkg}/bin/emacs --fg-daemon"
       ];
-      StandardErrorPath =
-        "${config.home.homeDirectory}/Library/Logs/emacs-daemon.stderr.log";
-      StandardOutPath =
-        "${config.home.homeDirectory}/Library/Logs/emacs-daemon.stdout.log";
+      StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/emacs-daemon.stderr.log";
+      StandardOutPath = "${config.home.homeDirectory}/Library/Logs/emacs-daemon.stdout.log";
       RunAtLoad = true;
       KeepAlive = true;
     };

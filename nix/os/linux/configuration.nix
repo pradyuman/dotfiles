@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     wget
+    nixfmt-rfc-style
   ];
 
   services.xserver = {
@@ -10,9 +11,9 @@
     displayManager.defaultSession = "xfce";
     desktopManager.xfce.enable = true;
   };
-  
+
   services.blueman.enable = true;
-  
+
   boot.extraModprobeConfig = ''
     options iwlwifi bt_coex_active=0
   '';

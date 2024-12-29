@@ -2,7 +2,8 @@
 
 let
   dotfiles = "${config.home.homeDirectory}/dotfiles";
-in {
+in
+{
   imports = [
     ./emacs
     ./git.nix
@@ -16,7 +17,7 @@ in {
     ./zsh.nix
 
     ./os-specific/linux.nix
-    ./os-specific/darwin.nix 
+    ./os-specific/darwin.nix
   ];
 
   home.sessionVariables = {
