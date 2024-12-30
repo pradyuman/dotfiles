@@ -49,9 +49,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! flymake-eslint)
-(package! rainbow-mode)
-
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
 (package! prisma-ts-mode)
 
@@ -59,3 +56,5 @@
   :recipe (:host github
            :repo "tninja/aider.el"
            :files ("aider.el" "aider-doom.el")))
+
+(package! rainbow-mode)

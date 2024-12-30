@@ -106,16 +106,23 @@
   (setq treesit-font-lock-level 4))
 
 (use-package! typescript-ts-mode
-  :config
-  (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'eglot-ensure)
-  (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'flymake-eslint-enable))
+  :init
+  (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp-deferred)
+  (after! flycheck
+    (flycheck-add-mode 'javascript-eslint 'typescript-ts-mode)
+    (flycheck-add-mode 'javascript-eslint 'tsx-ts-mode)
+    (flycheck-add-mode 'typescript-tslint 'typescript-ts-mode)
+    (flycheck-add-mode 'typescript-tslint 'tsx-ts-mode)))
 
-(use-package rainbow-mode
+(use-package! lsp-mode
+  :config
+  (setq lsp-eslint-working-directories [(:mode "auto")]))
+
+(use-package! rainbow-mode
   :hook
-  (typescript-ts-mode tsx-ts-mode)
   (typescript-ts-mode . rainbow-delimiters-mode)
   (tsx-ts-mode . rainbow-delimiters-mode))
 
-(use-package aider
+(use-package! aider
   :config
   (setq aider-args '("--model" "anthropic/claude-3-5-sonnet-20241022")))

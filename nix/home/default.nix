@@ -36,6 +36,10 @@ in
     nodejs_20
     nodePackages.pnpm
 
+    # TypeScript
+    typescript
+    typescript-language-server
+
     # LLM
     aider-chat
     ollama
