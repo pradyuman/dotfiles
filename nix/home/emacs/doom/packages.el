@@ -53,6 +53,7 @@
 (package! rainbow-mode)
 
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
+(package! prisma-ts-mode)
 
 (package! aider
   :recipe (:host github

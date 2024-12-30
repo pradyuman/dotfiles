@@ -73,16 +73,39 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(after! treesit
+(use-package! treesit
+  :config
+  (dolist (mapping
+           '(("\\.tsx\\'" . tsx-ts-mode)
+             ("\\.js\\'"  . typescript-ts-mode)
+             ("\\.mjs\\'" . typescript-ts-mode)
+             ("\\.mts\\'" . typescript-ts-mode)
+             ("\\.cjs\\'" . typescript-ts-mode)
+             ("\\.ts\\'"  . typescript-ts-mode)
+             ("\\.jsx\\'" . tsx-ts-mode)
+             ("\\.json\\'" . json-ts-mode)
+             ("\\.Dockerfile\\'" . dockerfile-ts-mode)
+             ("\\.prisma\\'" . prisma-ts-mode)))
+    (add-to-list 'auto-mode-alist mapping))
+
   (setq treesit-language-source-alist
-        '((javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "tsx/src")
-          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src")))
+        '((css "https://github.com/tree-sitter/tree-sitter-css" "master")
+          (prisma "https://github.com/victorhqc/tree-sitter-prisma")
+          (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")))
+
+  (dolist (mapping
+           '((css-mode . css-ts-mode)
+             (typescript-mode . typescript-ts-mode)
+             (js-mode . typescript-ts-mode)
+             (js2-mode . typescript-ts-mode)
+             (json-mode . json-ts-mode)
+             (js-json-mode . json-ts-mode)))
+    (add-to-list 'major-mode-remap-alist mapping))
   (setq treesit-font-lock-level 4))
 
-(use-package typescript-ts-mode
-  :mode (("\\.ts\\'" . typescript-ts-mode)
-         ("\\.tsx\\'" . tsx-ts-mode))
+(use-package! typescript-ts-mode
   :config
   (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'eglot-ensure)
   (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'flymake-eslint-enable))
