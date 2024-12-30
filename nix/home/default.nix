@@ -38,6 +38,7 @@ in
 
     # LLM
     aider-chat
+    ollama
   ];
 
   programs = {
