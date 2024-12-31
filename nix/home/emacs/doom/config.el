@@ -125,4 +125,16 @@
 
 (use-package! aider
   :config
+  ;; ANTHROPIC_API_KEY needs to be in the environment for this to work
   (setq aider-args '("--model" "anthropic/claude-3-5-sonnet-20241022")))
+
+;; To initialize:
+;; > M-x copilot-install-server
+;; > M-x copilot-login
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
