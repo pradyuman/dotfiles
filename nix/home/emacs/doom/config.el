@@ -106,6 +106,12 @@
     (add-to-list 'major-mode-remap-alist mapping))
   (setq treesit-font-lock-level 4))
 
+(use-package! lsp-mode
+  :hook (before-save . (lambda ()
+                         (when (lsp-workspaces) (lsp-organize-imports))))
+  :config
+  (setq lsp-eslint-working-directories [(mode "auto")]))
+
 (use-package! typescript-ts-mode
   :init
   (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp-deferred)
@@ -114,10 +120,6 @@
     (flycheck-add-mode 'javascript-eslint 'tsx-ts-mode)
     (flycheck-add-mode 'typescript-tslint 'typescript-ts-mode)
     (flycheck-add-mode 'typescript-tslint 'tsx-ts-mode)))
-
-(use-package! lsp-mode
-  :config
-  (setq lsp-eslint-working-directories [(:mode "auto")]))
 
 (use-package! rainbow-mode
   :hook
