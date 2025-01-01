@@ -90,6 +90,7 @@
 
   (setq treesit-language-source-alist
         '((css "https://github.com/tree-sitter/tree-sitter-css" "master")
+          (json "https://github.com/tree-sitter/tree-sitter-json")
           (prisma "https://github.com/victorhqc/tree-sitter-prisma")
           (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
           (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
