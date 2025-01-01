@@ -128,8 +128,9 @@
 
 (use-package! aider
   :config
-  ;; ANTHROPIC_API_KEY needs to be in the environment for this to work
-  (setq aider-args '("--model" "anthropic/claude-3-5-sonnet-20241022")))
+  (setq aider-args '("--chat-mode" "ask"
+                     ;; ANTHROPIC_API_KEY needs to be in the environment for this to work
+                     "--model" "anthropic/claude-3-5-sonnet-20241022")))
 
 ;; To initialize:
 ;; > M-x copilot-install-server
