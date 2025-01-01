@@ -34,11 +34,10 @@ in
 
     # Node
     nodejs_20
-    nodePackages.pnpm
+    pnpm
 
-    # TypeScript
+    # Typescript
     typescript
-    typescript-language-server
 
     # LLM
     aider-chat

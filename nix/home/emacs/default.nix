@@ -44,9 +44,9 @@ in
       shfmt # :lang sh
 
       # For TypeScript
+      typescript-language-server
       nodePackages.eslint
       nodePackages.prettier
-      nodePackages.typescript-language-server
     ];
 
     shellAliases = {
