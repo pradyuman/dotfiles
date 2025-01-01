@@ -73,6 +73,21 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; ---------
+;; Interface
+;; ---------
+
+(use-package! treemacs
+  :config
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-git-mode 'deferred)
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+
+;; --------------
+;; Language Tools
+;; --------------
+
 (use-package! treesit
   :config
   (dolist (mapping
@@ -126,11 +141,17 @@
   (typescript-ts-mode . rainbow-delimiters-mode)
   (tsx-ts-mode . rainbow-delimiters-mode))
 
-(use-package! aider
+;;; ---
+;;; LLM
+;;; ---
+
+(use-package! gptel
   :config
-  (setq aider-args '("--chat-mode" "ask"
-                     ;; ANTHROPIC_API_KEY needs to be in the environment for this to work
-                     "--model" "anthropic/claude-3-5-sonnet-20241022")))
+  (setq gptel-api-key (getenv "OPENAI_API_KEY")
+        gptel-model 'claude-3-5-sonnet-20241022
+        gptel-backend (gptel-make-anthropic "claude-3-5-sonnet-20241022"
+                        :stream t
+                        :key (getenv "ANTHROPIC_API_KEY"))))
 
 ;; To initialize:
 ;; > M-x copilot-install-server
@@ -143,9 +164,8 @@
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
-(use-package! treemacs
+(use-package! aider
   :config
-  (treemacs-follow-mode t)
-  (treemacs-filewatch-mode t)
-  (treemacs-git-mode 'deferred)
-  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+  (setq aider-args '("--chat-mode" "ask"
+                     ;; ANTHROPIC_API_KEY needs to be in the environment for this to work
+                     "--model" "anthropic/claude-3-5-sonnet-20241022")))
