@@ -10,7 +10,7 @@
 
       config.color_scheme = 'zenwritten_dark'
       config.font = wezterm.font 'Hasklig'
-      config.font_size = 11.5
+      config.font_size = 12.5
 
       config.command_palette_bg_color = '1c1917'
       config.command_palette_fg_color = 'b4bdc3'

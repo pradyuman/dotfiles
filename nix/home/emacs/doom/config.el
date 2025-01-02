@@ -19,9 +19,7 @@
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
-;;
-(setq doom-font (font-spec :family "Hasklig" :size 12))
+;; accept.
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -30,16 +28,7 @@
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'pmn-zenbadger)
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+;; `load-theme' function.
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -77,12 +66,37 @@
 ;; Interface
 ;; ---------
 
+(setq doom-theme 'pmn-zenbadger)
+(setq display-line-numbers-type t)
+
+(defun set-doom-font-by-monitor-resolution ()
+  (let* ((attrs (frame-monitor-attributes))
+         (geometry (alist-get 'geometry attrs))
+         (width-pixels (nth 2 geometry))
+         (font-size (if (> width-pixels 1920) 14 12)))
+    (setq doom-font (font-spec :family "Hasklig" :size font-size))))
+
+;; Set initial font size
+(set-doom-font-by-monitor-resolution)
+
+;; Reset font when window is focused
+(add-function
+ :after after-focus-change-function (lambda ()
+                                      (set-doom-font-by-monitor-resolution)
+                                      (doom/reload-font)))
+
 (use-package! treemacs
   :config
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   (treemacs-git-mode 'deferred)
   (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+
+;; --------------------
+;; Programming Defaults
+;; --------------------
+
+(setq tab-width 2)
 
 ;; --------------
 ;; Language Tools
