@@ -53,9 +53,11 @@
 ;;; Language Tools
 ;;; --------------
 
-(package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
+(package! just-mode)
 (package! prisma-ts-mode)
 (package! rainbow-mode)
+
+(package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
 
 ;;; ---
 ;;; LLM

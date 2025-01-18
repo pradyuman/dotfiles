@@ -105,25 +105,28 @@
 (use-package! treesit
   :config
   (dolist (mapping
-           '(("\\.tsx\\'" . tsx-ts-mode)
-             ("\\.js\\'"  . typescript-ts-mode)
+           '(("\\.js\\'"  . typescript-ts-mode)
              ("\\.mjs\\'" . typescript-ts-mode)
              ("\\.mts\\'" . typescript-ts-mode)
              ("\\.cjs\\'" . typescript-ts-mode)
              ("\\.ts\\'"  . typescript-ts-mode)
              ("\\.jsx\\'" . tsx-ts-mode)
+             ("\\.tsx\\'" . tsx-ts-mode)
              ("\\.json\\'" . json-ts-mode)
-             ("\\.Dockerfile\\'" . dockerfile-ts-mode)
-             ("\\.prisma\\'" . prisma-ts-mode)))
+             ("\\.prisma\\'" . prisma-ts-mode)
+             ("\\.yaml\\'" . yaml-ts-mode)
+             ("\\Dockerfile\\'" . dockerfile-ts-mode)))
     (add-to-list 'auto-mode-alist mapping))
 
   (setq treesit-language-source-alist
-        '((css "https://github.com/tree-sitter/tree-sitter-css" "master")
+        '((css "https://github.com/tree-sitter/tree-sitter-css")
           (json "https://github.com/tree-sitter/tree-sitter-json")
           (prisma "https://github.com/victorhqc/tree-sitter-prisma")
-          (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")))
+          (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx")
+          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript")
+          (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml")
+          (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")))
 
   (dolist (mapping
            '((css-mode . css-ts-mode)
