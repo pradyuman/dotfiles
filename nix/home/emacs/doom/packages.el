@@ -56,6 +56,7 @@
 (package! just-mode)
 (package! prisma-ts-mode)
 (package! rainbow-mode)
+(package! typespec-ts-mode)
 
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
 

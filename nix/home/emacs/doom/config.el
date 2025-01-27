@@ -125,6 +125,7 @@
           (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
           (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx")
           (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript")
+          (typespec "https://github.com/happenslol/tree-sitter-typespec")
           (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml")
           (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")))
 
