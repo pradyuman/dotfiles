@@ -40,7 +40,7 @@ in
     typescript
 
     # LLM
-    aider-chat
+    claude-code
     ollama
   ];
 

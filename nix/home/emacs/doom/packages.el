@@ -71,7 +71,5 @@
            :repo "copilot-emacs/copilot.el"
            :files ("*.el")))
 
-(package! aider
-  :recipe (:host github
-           :repo "tninja/aider.el"
-           :files ("aider.el" "aider-doom.el")))
+(package! claude-code-ide
+  :recipe (:host github :repo "manzaltu/claude-code-ide.el"))

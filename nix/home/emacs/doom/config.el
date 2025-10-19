@@ -182,8 +182,7 @@
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
-(use-package! aider
+(use-package! claude-code-ide
+  :bind ("C-c C-'" . claude-code-ide-menu)
   :config
-  (setq aider-args '("--chat-mode" "ask"
-                     ;; ANTHROPIC_API_KEY needs to be in the environment for this to work
-                     "--model" "anthropic/claude-3-5-sonnet-20241022")))
+  (claude-code-ide-emacs-tools-setup))
