@@ -23,6 +23,8 @@
     home = "/Users/pmn";
   };
 
+  ids.gids.nixbld = 30000;
+
   home-manager.users.pmn =
     { pkgs, ... }:
     {
@@ -30,10 +32,9 @@
       home.stateVersion = "23.05";
     };
 
-  services.nix-daemon.enable = true;
-
   system = {
     stateVersion = 5;
+    primaryUser = "pmn";
     defaults = {
       finder._FXShowPosixPathInTitle = true;
       loginwindow.GuestEnabled = false;

@@ -13,7 +13,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
 
-    initExtra = ''
+    initContent = ''
       eval "$(zoxide init zsh)"
     '';
   };
