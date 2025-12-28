@@ -16,4 +16,9 @@ in
   home.packages = with pkgs; [
     pinentry_mac
   ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 })

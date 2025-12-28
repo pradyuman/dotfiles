@@ -7,7 +7,14 @@
 }:
 
 let
-  emacsPkg = with pkgs; ((emacsPackagesFor emacsDarwin).emacsWithPackages (epkgs: [ epkgs.vterm ]));
+  emacsPkg =
+    with pkgs;
+    ((emacsPackagesFor emacsDarwin).emacsWithPackages (
+      epkgs: with epkgs; ([
+        vterm
+        treesit-grammars.with-all-grammars
+      ])
+    ));
 in
 {
   nixpkgs.overlays = [

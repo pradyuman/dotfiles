@@ -119,15 +119,8 @@
     (add-to-list 'auto-mode-alist mapping))
 
   (setq treesit-language-source-alist
-        '((css "https://github.com/tree-sitter/tree-sitter-css")
-          (json "https://github.com/tree-sitter/tree-sitter-json")
-          (prisma "https://github.com/victorhqc/tree-sitter-prisma")
-          (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-          (typespec "https://github.com/happenslol/tree-sitter-typespec")
-          (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml")
-          (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")))
+        (append treesit-language-source-alist
+                '((typespec "https://github.com/happenslol/tree-sitter-typespec"))))
 
   (dolist (mapping
            '((css-mode . css-ts-mode)

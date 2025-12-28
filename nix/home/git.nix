@@ -2,9 +2,6 @@
   programs.git = {
     enable = true;
 
-    userEmail = "me@pmn.co";
-    userName = "Pradyuman Vig";
-
     signing = {
       signByDefault = true;
       key = "4378CA1B422BBB4C";
@@ -15,14 +12,20 @@
       ".metals"
     ];
 
-    delta = {
-      enable = true;
-    };
+    settings = {
+      user = {
+        email = "me@pmn.co";
+        name = "Pradyuman Vig";
+      };
 
-    extraConfig = {
       github = {
         user = "pradyuman";
       };
     };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }
