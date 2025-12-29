@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -25,12 +20,10 @@
 
   ids.gids.nixbld = 30000;
 
-  home-manager.users.pmn =
-    { pkgs, ... }:
-    {
-      imports = [ ../../home ];
-      home.stateVersion = "23.05";
-    };
+  home-manager.users.pmn = {
+    imports = [ ../../home ];
+    home.stateVersion = "23.05";
+  };
 
   system = {
     stateVersion = 5;

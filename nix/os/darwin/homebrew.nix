@@ -1,5 +1,3 @@
-{ home-manager, ... }:
-
 {
   homebrew = {
     enable = true;
@@ -9,9 +7,9 @@
       "arc"
       "cursor"
       "discord"
+      "ghostty"
       "figma"
       "numi"
-      "wezterm"
     ];
   };
 

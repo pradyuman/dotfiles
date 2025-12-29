@@ -1,18 +1,15 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  dotfiles = "${config.home.homeDirectory}/dotfiles";
-in
 {
   imports = [
     ./emacs
     ./git.nix
+    ./ghostty.nix
     ./gpg.nix
     ./ssh.nix
     ./starship.nix
     ./vim.nix
     ./vscode.nix
-    ./wezterm.nix
     ./zellij.nix
     ./zsh.nix
 
