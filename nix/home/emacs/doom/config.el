@@ -132,22 +132,21 @@
     (add-to-list 'major-mode-remap-alist mapping))
   (setq treesit-font-lock-level 4))
 
-(use-package! lsp-mode
-  :hook (before-save . (lambda ()
-                         (when (lsp-workspaces) (lsp-organize-imports))))
+(use-package! lsp-biome
+  :preface
+  (defun +biome-setup-h ()
+    (setq-local apheleia-formatter '(biome))
+    (add-hook 'before-save-hook #'lsp-biome-organize-imports nil t)
+    (add-hook 'before-save-hook #'lsp-biome-fix-all nil t))
   :config
-  (setq lsp-eslint-working-directories [(mode "auto")]))
+  (add-hook 'lsp-biome-active-hook #'+biome-setup-h))
+
 
 (use-package! typescript-ts-mode
   :init
-  (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp-deferred)
-  (after! flycheck
-    (flycheck-add-mode 'javascript-eslint 'typescript-ts-mode)
-    (flycheck-add-mode 'javascript-eslint 'tsx-ts-mode)
-    (flycheck-add-mode 'typescript-tslint 'typescript-ts-mode)
-    (flycheck-add-mode 'typescript-tslint 'tsx-ts-mode)))
+  (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp-deferred))
 
-(use-package! rainbow-mode
+(use-package! rainbow-delimiters
   :hook
   (typescript-ts-mode . rainbow-delimiters-mode)
   (tsx-ts-mode . rainbow-delimiters-mode))

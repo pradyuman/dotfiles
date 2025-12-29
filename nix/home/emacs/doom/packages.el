@@ -61,6 +61,9 @@
 
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
 
+(package! lsp-biome
+  :recipe (:host github :repo "cxa/lsp-biome"))
+
 ;;; ---
 ;;; LLM
 ;;; ---

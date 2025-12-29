@@ -38,6 +38,7 @@ in
 
     # Typescript
     typescript
+    biome
 
     # LLM
     claude-code
