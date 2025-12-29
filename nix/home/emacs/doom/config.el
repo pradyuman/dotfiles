@@ -156,24 +156,24 @@
 ;;; LLM
 ;;; ---
 
-(use-package! gptel
-  :config
-  (setq gptel-api-key (getenv "OPENAI_API_KEY")
-        gptel-model 'claude-3-5-sonnet-20241022
-        gptel-backend (gptel-make-anthropic "claude-3-5-sonnet-20241022"
-                        :stream t
-                        :key (getenv "ANTHROPIC_API_KEY"))))
+(use-package! minuet
+  :bind
+  (:map minuet-active-mode-map
+        ;; These keymaps activate only when a minuet suggestion is displayed in the current buffer
+        ("M-p" . #'minuet-previous-suggestion) ;; invoke completion or cycle to next completion
+        ("M-n" . #'minuet-next-suggestion) ;; invoke completion or cycle to previous completion
+        ("M-a" . #'minuet-accept-suggestion) ;; accept whole completion
+        ;; Accept the first line of completion, or N lines with a numeric-prefix:
+        ;; e.g. C-u 2 M-a will accepts 2 lines of completion.
+        ("M-A" . #'minuet-accept-suggestion-line)
 
-;; To initialize:
-;; > M-x copilot-install-server
-;; > M-x copilot-login
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+        ("M-e" . #'minuet-dismiss-suggestion))
+  :init
+  (add-hook 'prog-mode-hook #'minuet-auto-suggestion-mode)
+  :config
+  (setq minuet-provider 'claude
+        minuet-auto-suggestion-debounce-delay 0.2
+        minuet-auto-suggestion-throttle-delay 0.5))
 
 (use-package! claude-code-ide
   :bind ("C-c C-'" . claude-code-ide-menu)

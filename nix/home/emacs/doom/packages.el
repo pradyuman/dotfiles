@@ -56,6 +56,7 @@
 (package! just-mode)
 (package! prisma-ts-mode)
 (package! rainbow-mode)
+(package! rainbow-delimiters)
 (package! typespec-ts-mode)
 
 (package! typescript-mode :disable t) ;; We're using typescript-ts-mode now
@@ -64,12 +65,7 @@
 ;;; LLM
 ;;; ---
 
-(package! gptel)
-
-(package! copilot
-  :recipe (:host github
-           :repo "copilot-emacs/copilot.el"
-           :files ("*.el")))
+(package! minuet)
 
 (package! claude-code-ide
   :recipe (:host github :repo "manzaltu/claude-code-ide.el"))
