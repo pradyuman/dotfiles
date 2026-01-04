@@ -26,6 +26,7 @@ in
     packages = with pkgs; [
       # Emacs
       emacsPkg
+      emacs-lsp-booster
 
       # For Doom
       fontconfig
@@ -67,6 +68,7 @@ in
 
   programs.zsh.envExtra = ''
     export PATH="${config.xdg.configHome}/emacs/bin:$PATH"
+    export LSP_USE_PLISTS=true
   '';
 
   xdg.configFile."doom" = {
