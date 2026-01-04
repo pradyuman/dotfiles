@@ -92,6 +92,14 @@
   (treemacs-git-mode 'deferred)
   (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
 
+(after! corfu
+  (setq corfu-auto-delay 0.1
+        corfu-auto-prefix 1)
+  ;; ESC without exiting insert mode (to hide corfu suggestions while keeping the minuet ones)
+  (map! :map corfu-map
+        :i "ESC" #'corfu-quit
+        :i [escape] #'corfu-quit))
+
 ;; --------------------
 ;; Programming Defaults
 ;; --------------------
@@ -132,6 +140,9 @@
     (add-to-list 'major-mode-remap-alist mapping))
   (setq treesit-font-lock-level 4))
 
+(after! lsp-mode
+  (setq lsp-idle-delay 0.1))
+
 (use-package! lsp-biome
   :preface
   (defun +biome-setup-h ()
@@ -140,7 +151,6 @@
     (add-hook 'before-save-hook #'lsp-biome-fix-all nil t))
   :config
   (add-hook 'lsp-biome-active-hook #'+biome-setup-h))
-
 
 (use-package! typescript-ts-mode
   :init
@@ -171,8 +181,8 @@
   (add-hook 'prog-mode-hook #'minuet-auto-suggestion-mode)
   :config
   (setq minuet-provider 'claude
-        minuet-auto-suggestion-debounce-delay 0.2
-        minuet-auto-suggestion-throttle-delay 0.5))
+        minuet-auto-suggestion-debounce-delay 0.1
+        minuet-auto-suggestion-throttle-delay 0.25))
 
 (use-package! claude-code-ide
   :bind ("C-c C-'" . claude-code-ide-menu)
