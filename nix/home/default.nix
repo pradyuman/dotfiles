@@ -39,7 +39,9 @@
 
     # LLM
     claude-code
+    codex
     ollama
+    opencode
   ];
 
   programs = {
