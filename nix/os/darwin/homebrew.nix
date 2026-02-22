@@ -5,11 +5,13 @@
     casks = [
       "1password"
       "arc"
+      "codex"
       "cursor"
       "discord"
-      "ghostty"
       "figma"
+      "ghostty"
       "numi"
+      "tableplus"
     ];
   };
 
