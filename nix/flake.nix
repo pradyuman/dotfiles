@@ -36,11 +36,15 @@
     {
       darwinConfigurations.astraea = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        pkgs = import nixpkgs { system = "aarch64-darwin"; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./os/darwin/configuration.nix
           home-manager.darwinModules.home-manager
-          { home-manager.extraSpecialArgs = { inherit inputs; }; }
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
         ];
       };
 
@@ -54,7 +58,7 @@
         builtins.listToAttrs (
           map (system: {
             name = system;
-            value = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
+            value = nixpkgs.legacyPackages.${system}.nixfmt;
           }) systems
         );
 

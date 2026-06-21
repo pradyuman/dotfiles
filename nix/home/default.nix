@@ -52,6 +52,4 @@
     jq.enable = true;
     tmux.enable = true;
   };
-
-  nixpkgs.config.allowUnfree = true;
 }

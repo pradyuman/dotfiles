@@ -17,10 +17,6 @@ let
     ));
 in
 {
-  nixpkgs.overlays = [
-    inputs.emacs-overlay.overlay
-    (import ../../overlays/emacs-darwin.nix)
-  ];
 
   home = {
     packages = with pkgs; [

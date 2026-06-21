@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     wget
-    nixfmt-rfc-style
+    nixfmt
   ];
 
   services.xserver = {

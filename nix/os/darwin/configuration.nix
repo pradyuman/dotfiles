@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -7,10 +7,19 @@
     ./homebrew.nix
   ];
 
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.emacs-overlay.overlay
+      (import ../../overlays/emacs-darwin.nix)
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     vim
-    nixfmt-rfc-style
+    nixfmt
   ];
+
   programs.zsh.enable = true;
 
   users.users.pmn = {
