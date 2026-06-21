@@ -6,6 +6,7 @@
       default_layout = "compact";
       pane_frames = false;
       simplified_ui = true;
+      show_startup_tips = false;
 
       theme = "zenwritten_dark";
       themes = {

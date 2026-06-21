@@ -5,7 +5,7 @@
     casks = [
       "1password"
       "arc"
-      "codex"
+      "codex-app"
       "cursor"
       "discord"
       "figma"

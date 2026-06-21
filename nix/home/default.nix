@@ -30,7 +30,7 @@
     zoxide
 
     # Node
-    nodejs_20
+    nodejs
     pnpm
 
     # Typescript

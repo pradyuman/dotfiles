@@ -53,8 +53,8 @@ in
 
       # For TypeScript
       typescript-language-server
-      nodePackages.eslint
-      nodePackages.prettier
+      eslint
+      prettier
     ];
 
     shellAliases = {
