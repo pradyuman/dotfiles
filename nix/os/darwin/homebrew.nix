@@ -10,6 +10,7 @@
       "discord"
       "figma"
       "ghostty"
+      "music-presence"
       "numi"
       "tableplus"
     ];
