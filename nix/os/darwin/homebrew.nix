@@ -5,6 +5,7 @@
     casks = [
       "1password"
       "arc"
+      "claude"
       "codex-app"
       "cursor"
       "discord"
