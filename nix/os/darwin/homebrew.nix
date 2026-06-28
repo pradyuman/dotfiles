@@ -11,6 +11,7 @@
       "discord"
       "figma"
       "ghostty"
+      "microsoft-office"
       "music-presence"
       "numi"
       "tableplus"
