@@ -27,8 +27,6 @@
     home = "/Users/pmn";
   };
 
-  ids.gids.nixbld = 30000;
-
   home-manager.users.pmn = {
     imports = [ ../../home ];
     home.stateVersion = "23.05";

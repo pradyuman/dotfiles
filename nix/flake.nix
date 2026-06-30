@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    determinate.url = "github:DeterminateSystems/determinate";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -29,6 +30,7 @@
     inputs@{
       self,
       nixpkgs,
+      determinate,
       nix-darwin,
       home-manager,
       ...
@@ -38,7 +40,14 @@
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
         modules = [
+          # Determinate Nix
+          determinate.darwinModules.default
+          { determinateNix.enable = true; }
+
+          # Darwin configuration
           ./os/darwin/configuration.nix
+
+          # Home Manager
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
