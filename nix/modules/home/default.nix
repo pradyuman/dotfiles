@@ -12,9 +12,6 @@
     ./vscode.nix
     ./zellij.nix
     ./zsh.nix
-
-    ./os-specific/linux.nix
-    ./os-specific/darwin.nix
   ];
 
   home.sessionVariables = {

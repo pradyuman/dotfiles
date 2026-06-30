@@ -44,8 +44,8 @@
           determinate.darwinModules.default
           { determinateNix.enable = true; }
 
-          # Darwin configuration
-          ./os/darwin/configuration.nix
+          # Machine configuration
+          ./machines/astraea/darwin.nix
 
           # Home Manager
           home-manager.darwinModules.home-manager
