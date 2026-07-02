@@ -11,8 +11,9 @@ lib.mkMerge [
   }
 
   (lib.mkIf pkgs.stdenv.isDarwin {
-    home.file.".gnupg/gpg-agent.conf" = {
-      text = "pinentry-program ${pkgs.pinentry_mac}/${pkgs.pinentry_mac.passthru.binaryPath}";
+    services.gpg-agent = {
+      enable = true;
+      pinentry.package = pkgs.pinentry_mac;
     };
 
     home.packages = with pkgs; [
