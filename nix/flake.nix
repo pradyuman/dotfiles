@@ -36,6 +36,9 @@
       ...
     }:
     {
+      homeModules.default = ./modules/home;
+      darwinModules.default = ./modules/darwin;
+
       darwinConfigurations.astraea = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
