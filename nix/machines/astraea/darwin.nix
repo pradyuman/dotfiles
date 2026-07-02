@@ -12,7 +12,7 @@
 
   home-manager.users.pmn = {
     imports = [ ../../modules/home ];
-    home.stateVersion = "23.05";
+    home.stateVersion = "26.05";
   };
 
   system = {
