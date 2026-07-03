@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./aside.nix
     ./homebrew.nix
     ./skhd.nix
     ./yabai.nix

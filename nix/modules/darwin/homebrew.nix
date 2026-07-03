@@ -16,6 +16,10 @@
       "numi"
       "tableplus"
     ];
+
+    masApps = {
+      "1Password for Safari" = 1569813296;
+    };
   };
 
   home-manager.users.pmn.programs.zsh.profileExtra = ''
