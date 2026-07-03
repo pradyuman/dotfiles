@@ -8,6 +8,12 @@ let
         installation_mode = "force_installed";
         update_url = "https://clients2.google.com/service/update2/crx";
       };
+
+      # React Developer Tools
+      "fmkadmapgofadopljbjfkapdkoienihi" = {
+        installation_mode = "force_installed";
+        update_url = "https://clients2.google.com/service/update2/crx";
+      };
     };
   };
 in
