@@ -1,7 +1,13 @@
+{ inputs, ... }:
+
 {
   imports = [
+    inputs.determinate.darwinModules.default
+    inputs.home-manager.darwinModules.home-manager
     ../../modules/darwin
   ];
+
+  determinateNix.enable = true;
 
   networking.hostName = "astraea";
 
@@ -10,9 +16,15 @@
     home = "/Users/pmn";
   };
 
-  home-manager.users.pmn = {
-    imports = [ ../../modules/home ];
-    home.stateVersion = "26.05";
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+
+    users.pmn = {
+      imports = [ ../../modules/home ];
+      home.stateVersion = "26.05";
+    };
   };
 
   system = {

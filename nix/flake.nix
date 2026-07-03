@@ -43,20 +43,7 @@
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
         modules = [
-          # Determinate Nix
-          determinate.darwinModules.default
-          { determinateNix.enable = true; }
-
-          # Machine configuration
           ./machines/astraea/darwin.nix
-
-          # Home Manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
         ];
       };
 
