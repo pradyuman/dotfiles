@@ -57,7 +57,7 @@
         builtins.listToAttrs (
           map (system: {
             name = system;
-            value = nixpkgs.legacyPackages.${system}.nixfmt;
+            value = nixpkgs.legacyPackages.${system}.nixfmt-tree;
           }) systems
         );
 
