@@ -3,6 +3,7 @@
 {
   imports = [
     ./aside.nix
+    ./fonts.nix
     ./homebrew.nix
     ./skhd.nix
     ./yabai.nix
