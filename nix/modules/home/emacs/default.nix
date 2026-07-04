@@ -49,8 +49,7 @@ in
 
       # For TypeScript
       typescript-language-server
-      eslint
-      prettier
+      biome
     ];
 
     shellAliases = {

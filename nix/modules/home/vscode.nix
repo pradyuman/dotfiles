@@ -12,20 +12,19 @@
         "editor.formatOnSave" = true;
         "editor.codeActionsOnSave" = {
           "source.organizeImports" = "explicit";
-          "source.fixAll.eslint" = "explicit";
+          "source.fixAll.biome" = "explicit";
         };
-        "eslint.workingDirectories" = [ { "mode" = "auto"; } ];
         "[javascript]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+          "editor.defaultFormatter" = "biomejs.biome";
         };
         "[javascriptreact]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+          "editor.defaultFormatter" = "biomejs.biome";
         };
         "[typescript]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+          "editor.defaultFormatter" = "biomejs.biome";
         };
         "[typescriptreact]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+          "editor.defaultFormatter" = "biomejs.biome";
         };
         "[scala]" = {
           "editor.defaultFormatter" = "scalameta.metals";
@@ -50,12 +49,11 @@
         apollographql.vscode-apollo
         bbenoist.nix
         eamodio.gitlens
-        esbenp.prettier-vscode
-        dbaeumer.vscode-eslint
         github.copilot
         mattn.lisp
         ms-azuretools.vscode-docker
         ms-vscode-remote.remote-containers
+        biomejs.biome
         prisma.prisma
         redhat.vscode-yaml
         scalameta.metals
