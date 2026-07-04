@@ -18,6 +18,7 @@
       "ghostty"
       "microsoft-office"
       "music-presence"
+      "notion"
       "numi"
       "orion"
       "tableplus"
