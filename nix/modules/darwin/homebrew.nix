@@ -14,6 +14,7 @@
       "microsoft-office"
       "music-presence"
       "numi"
+      "orion"
       "tableplus"
     ];
 

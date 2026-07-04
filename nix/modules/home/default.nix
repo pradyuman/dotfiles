@@ -6,6 +6,7 @@
     ./git.nix
     ./ghostty.nix
     ./gpg.nix
+    ./orion.nix
     ./ssh.nix
     ./starship.nix
     ./vim.nix
