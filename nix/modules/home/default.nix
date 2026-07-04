@@ -8,7 +8,6 @@
     ./gpg.nix
     ./orion.nix
     ./ssh.nix
-    ./starship.nix
     ./vim.nix
     ./vscode.nix
     ./zellij.nix
@@ -25,7 +24,6 @@
     nmap
     unzip
     wget
-    zoxide
 
     # Node
     nodejs
@@ -48,6 +46,8 @@
     fzf.enable = true;
     htop.enable = true;
     jq.enable = true;
+    starship.enable = true;
     tmux.enable = true;
+    zoxide.enable = true;
   };
 }

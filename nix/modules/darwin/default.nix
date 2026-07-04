@@ -19,7 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    nixfmt
   ];
 
   programs.zsh.enable = true;

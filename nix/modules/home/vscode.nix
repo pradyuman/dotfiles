@@ -11,7 +11,7 @@
         "editor.tabSize" = 2;
         "editor.formatOnSave" = true;
         "editor.codeActionsOnSave" = {
-          "source.organizeImports" = "explicit";
+          "source.organizeImports.biome" = "explicit";
           "source.fixAll.biome" = "explicit";
         };
         "[javascript]" = {

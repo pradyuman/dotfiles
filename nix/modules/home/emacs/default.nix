@@ -54,6 +54,7 @@ in
 
     shellAliases = {
       e = "emacsclient -n";
+      erestart = "launchctl kickstart -k gui/$UID/home-manager-emacs";
     };
 
     activation.installDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

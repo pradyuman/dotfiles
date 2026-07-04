@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-
 {
-  home.packages = with pkgs; [ zsh ];
-
   programs.zsh = {
     enable = true;
 
@@ -12,9 +8,5 @@
 
     autosuggestion.enable = true;
     enableCompletion = true;
-
-    initContent = ''
-      eval "$(zoxide init zsh)"
-    '';
   };
 }

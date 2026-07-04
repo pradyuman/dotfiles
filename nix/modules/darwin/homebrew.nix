@@ -2,6 +2,8 @@
   homebrew = {
     enable = true;
 
+    onActivation.cleanup = "uninstall";
+
     casks = [
       "1password"
       "aside"

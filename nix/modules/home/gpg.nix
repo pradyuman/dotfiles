@@ -15,9 +15,5 @@ lib.mkMerge [
       enable = true;
       pinentry.package = pkgs.pinentry_mac;
     };
-
-    home.packages = with pkgs; [
-      pinentry_mac
-    ];
   })
 ]

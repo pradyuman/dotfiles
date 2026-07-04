@@ -9,6 +9,7 @@
 
     ignores = [
       ".aider*"
+      ".claude"
       ".metals"
     ];
 
