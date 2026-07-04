@@ -1,8 +1,11 @@
+{ config, ... }:
+
 {
   homebrew = {
     enable = true;
 
     onActivation.cleanup = "uninstall";
+    taps = builtins.attrNames config.nix-homebrew.taps;
 
     casks = [
       "1password"

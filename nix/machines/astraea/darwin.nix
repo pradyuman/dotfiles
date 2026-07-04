@@ -4,6 +4,7 @@
   imports = [
     inputs.determinate.darwinModules.default
     inputs.home-manager.darwinModules.home-manager
+    inputs.nix-homebrew.darwinModules.nix-homebrew
     ../../modules/darwin
   ];
 
@@ -24,6 +25,16 @@
     users.pmn = {
       imports = [ ../../modules/home ];
       home.stateVersion = "26.05";
+    };
+  };
+
+  nix-homebrew = {
+    enable = true;
+    user = "pmn";
+    mutableTaps = false;
+    taps = {
+      "homebrew/homebrew-core" = inputs.homebrew-core;
+      "homebrew/homebrew-cask" = inputs.homebrew-cask;
     };
   };
 
