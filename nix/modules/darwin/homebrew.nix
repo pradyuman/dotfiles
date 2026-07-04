@@ -11,6 +11,7 @@
       "1password"
       "aside"
       "claude"
+      "cleanshot"
       "codex-app"
       "cursor"
       "discord"
@@ -22,14 +23,11 @@
       "numi"
       "orion"
       "tableplus"
+      "wallspace"
     ];
 
     masApps = {
       "1Password for Safari" = 1569813296;
     };
   };
-
-  home-manager.users.pmn.programs.zsh.profileExtra = ''
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  '';
 }
