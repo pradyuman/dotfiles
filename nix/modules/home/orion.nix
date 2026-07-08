@@ -10,7 +10,7 @@
 
     # Tabs
     TabStyle = "treeStyle";
-    TabSwitchingOrder = "byIndex";
+    TabSwitchingOrder = "byRecentlyUsed";
     ShowTitlesInTabs = true;
     TabsShowFavicons = true;
     ShowTabPreviewOnHover = false;
@@ -31,7 +31,11 @@
     ShowRssFeedsButton = false;
 
     # Behavior
+    AllowChromeWebExtensions = false;
+    AllowFirefoxWebExtensions = false;
+    AutofillEnabled = false;
     PasswordProvider = "none";
+    PasswordSavingEnabled = false;
     ExperimentalFeatures = {
       "Prefer Page Rendering Updates near 120fps" = true;
     };
