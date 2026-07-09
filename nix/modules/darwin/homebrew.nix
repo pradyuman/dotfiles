@@ -21,7 +21,6 @@
       "music-presence"
       "notion"
       "numi"
-      "orion"
       "tableplus"
       "wallspace"
     ];

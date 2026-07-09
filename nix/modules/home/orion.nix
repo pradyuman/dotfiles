@@ -1,53 +1,63 @@
-{ lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  # Merged into Orion's plist on activation via `defaults import`
-  # Keys not listed here (window state, content blockers, etc) are untouched.
-  targets.darwin.defaults."com.kagi.kagimacOS" = lib.mkIf pkgs.stdenv.isDarwin {
-    # Search & navigation
-    DefaultSearchEngine = "Google";
-    NewTabOpensTo = "frequentlyVisitedSites"; # Start Page
+  imports = [
+    inputs.nix-orion.homeModules.default
+  ];
 
-    # Tabs
-    TabStyle = "treeStyle";
-    TabSwitchingOrder = "byRecentlyUsed";
-    ShowTitlesInTabs = true;
-    TabsShowFavicons = true;
-    ShowTabPreviewOnHover = false;
-    UseTabSwitcherUI = true;
+  programs.orion = lib.mkIf pkgs.stdenv.isDarwin {
+    enable = true;
 
-    # Appearance
-    CustomAppIcon = "appicon3";
-    CurrentToolbarSize = "small";
-    BookmarksBarVisible = false;
-    StatusBarVisible = false;
+    settings = {
+      # Search & navigation
+      DefaultSearchEngine = "Google";
+      NewTabOpensTo = "frequentlyVisitedSites"; # Start Page
 
-    # Start page
-    ShowBackgroundImageOnStartPage = false;
-    ShowFavoritesOnStartPage = false;
-    ShowReadingListOnStartPage = false;
-    ShowRecommendationsOnStartPage = false;
-    ShowTopSitesOnStartPage = false;
-    ShowRssFeedsButton = false;
+      # Tabs
+      TabStyle = "treeStyle";
+      TabSwitchingOrder = "byRecentlyUsed";
+      ShowTitlesInTabs = true;
+      TabsShowFavicons = true;
+      ShowTabPreviewOnHover = false;
+      UseTabSwitcherUI = true;
 
-    # Behavior
-    AllowChromeWebExtensions = false;
-    AllowFirefoxWebExtensions = false;
-    AutofillEnabled = false;
-    PasswordProvider = "none";
-    PasswordSavingEnabled = false;
-    ExperimentalFeatures = {
-      "Prefer Page Rendering Updates near 120fps" = true;
-    };
+      # Appearance
+      CustomAppIcon = "appicon3";
+      CurrentToolbarSize = "small";
+      BookmarksBarVisible = false;
+      StatusBarVisible = false;
 
-    # Menu shortcut overrides (macOS App Shortcuts)
-    NSUserKeyEquivalents = {
-      "Show Sidebar" = "@s";
-      "Hide Sidebar" = "@s";
+      # Start page
+      ShowBackgroundImageOnStartPage = false;
+      ShowFavoritesOnStartPage = false;
+      ShowRecommendationsOnStartPage = false;
+      ShowTopSitesOnStartPage = false;
+      ShowRssFeedsButton = false;
 
-      # Save Page holds cmd-s by default.
-      # It must move for the sidebar binding to work.
-      "Save Page…" = "@^s";
+      # Behavior
+      AllowChromeWebExtensions = false;
+      AllowFirefoxWebExtensions = false;
+      AutofillEnabled = false;
+      PasswordProvider = "none";
+      PasswordSavingEnabled = false;
+      ExperimentalFeatures = {
+        "Prefer Page Rendering Updates near 120fps" = true;
+      };
+
+      # Menu shortcut overrides (macOS App Shortcuts)
+      NSUserKeyEquivalents = {
+        "Show Sidebar" = "@s";
+        "Hide Sidebar" = "@s";
+
+        # Save Page holds cmd-s by default.
+        # It must move for the sidebar binding to work.
+        "Save Page…" = "@^s";
+      };
     };
   };
 }

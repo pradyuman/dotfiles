@@ -287,6 +287,26 @@
         "type": "github"
       }
     },
+    "nix-orion": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783559622,
+        "narHash": "sha256-COemyBwYY+2LQHXviuNMcVA0cjgY6/An0QcbD781f2I=",
+        "owner": "pradyuman",
+        "repo": "nix-orion",
+        "rev": "d2b36c61bfa8d893b3f89c3ca308b7aca0f7dbcc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pradyuman",
+        "repo": "nix-orion",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1773222311,
@@ -389,6 +409,7 @@
         "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
+        "nix-orion": "nix-orion",
         "nixpkgs": "nixpkgs_3"
       }
     }

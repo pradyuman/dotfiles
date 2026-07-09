@@ -36,6 +36,11 @@
       url = "github:doomemacs/doomemacs";
       flake = false;
     };
+
+    nix-orion = {
+      url = "github:pradyuman/nix-orion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
