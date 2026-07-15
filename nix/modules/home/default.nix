@@ -26,6 +26,7 @@
     wget
 
     # Node
+    bun
     nodejs
     pnpm
 
