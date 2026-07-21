@@ -28,9 +28,20 @@
 
       # Appearance
       CustomAppIcon = "appicon3";
-      CurrentToolbarSize = "small";
       BookmarksBarVisible = false;
       StatusBarVisible = false;
+
+      # Toolbar
+      CurrentToolbarSize = "small";
+      ToolbarConfiguration = {
+        "TB Display Mode" = 2;
+        "TB Item Identifiers" = [
+          "NSToolbarFlexibleSpaceItem"
+          "locationBar"
+          "NSToolbarFlexibleSpaceItem"
+          "webExtButton-aeblfdkhhhdcdjpifhhbdiojplfjncoa"
+        ];
+      };
 
       # Start page
       ShowBackgroundImageOnStartPage = false;
