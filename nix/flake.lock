@@ -310,6 +310,27 @@
         "type": "github"
       }
     },
+    "nix-vmware-fusion": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix_2"
+      },
+      "locked": {
+        "lastModified": 1785664849,
+        "narHash": "sha256-a8iG7dyHM/DHiWBUYlJ5MCOOXM0xKzv9pFTWM1qW0fc=",
+        "owner": "pradyuman",
+        "repo": "nix-vmware-fusion",
+        "rev": "d823e85e81b89bcf081d96226d8e7b92f169c414",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pradyuman",
+        "repo": "nix-vmware-fusion",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1773222311,
@@ -413,6 +434,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nix-orion": "nix-orion",
+        "nix-vmware-fusion": "nix-vmware-fusion",
         "nixpkgs": "nixpkgs_3"
       }
     },
@@ -429,6 +451,27 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "rev": "db947814a175b7ca6ded66e21383d938df01c227",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nix-vmware-fusion",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785360170,
+        "narHash": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
         "type": "github"
       },
       "original": {

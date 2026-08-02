@@ -41,6 +41,11 @@
       url = "github:pradyuman/nix-orion";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vmware-fusion = {
+      url = "github:pradyuman/nix-vmware-fusion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

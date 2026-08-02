@@ -5,6 +5,7 @@
     inputs.determinate.darwinModules.default
     inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    inputs.nix-vmware-fusion.darwinModules.default
     ../../modules/darwin
   ];
 
@@ -37,6 +38,8 @@
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
     };
   };
+
+  programs.vmware-fusion.enable = true;
 
   system = {
     stateVersion = 5;
