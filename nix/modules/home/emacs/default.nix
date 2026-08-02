@@ -54,11 +54,18 @@ in
 
     shellAliases = {
       e = "emacsclient -n";
-      erestart = "launchctl kickstart -k gui/$UID/home-manager-emacs";
+      erestart = "launchctl kickstart -k gui/$UID/org.nix-community.home.emacs";
     };
 
     activation.installDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${inputs.doomemacs}/ ${config.xdg.configHome}/emacs/
+      ${pkgs.rsync}/bin/rsync \
+        -avz \
+        --delete \
+        --exclude=.local/ \
+        --exclude=auto-save-list/ \
+        --chmod=D2755,F744 \
+        ${inputs.doomemacs}/ \
+        ${config.xdg.configHome}/emacs/
     '';
   };
 
