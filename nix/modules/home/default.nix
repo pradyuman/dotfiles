@@ -4,6 +4,7 @@
   imports = [
     ./emacs
     ./git.nix
+    ./gh.nix
     ./ghostty.nix
     ./gpg.nix
     ./orion.nix
