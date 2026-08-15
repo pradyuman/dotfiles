@@ -80,6 +80,7 @@
        emacs-lisp
        markdown
        (nix +lsp +tree-sitter)
+       (rust +lsp +tree-sitter)
 
        :config
        (default +bindings +smartparens))

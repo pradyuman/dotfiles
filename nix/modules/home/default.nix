@@ -35,6 +35,12 @@
     typescript
     biome
 
+    # Rust
+    cargo
+    clippy
+    rustc
+    rustfmt
+
     # LLM
     claude-code
     codex

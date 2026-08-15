@@ -50,6 +50,9 @@ in
       # For TypeScript
       typescript-language-server
       biome
+
+      # For Rust
+      rust-analyzer
     ];
 
     shellAliases = {
