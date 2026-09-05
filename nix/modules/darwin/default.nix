@@ -12,9 +12,7 @@
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
-      inputs.emacs-overlay.overlay
       inputs.nix-orion.overlays.default
-      (import ../../overlays/darwin/emacs.nix)
     ];
   };
 

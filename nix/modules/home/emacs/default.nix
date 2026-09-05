@@ -9,7 +9,7 @@
 let
   emacsPkg =
     with pkgs;
-    ((emacsPackagesFor emacsDarwin).emacsWithPackages (
+    ((emacsPackagesFor emacs).emacsWithPackages (
       epkgs: with epkgs; ([
         vterm
         treesit-grammars.with-all-grammars
