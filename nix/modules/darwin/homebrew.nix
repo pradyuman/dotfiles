@@ -23,6 +23,7 @@
       "numi"
       "tableplus"
       "wallspace"
+      "work-louder-input"
     ];
 
     masApps = {
