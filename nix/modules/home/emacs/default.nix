@@ -11,7 +11,8 @@ let
     with pkgs;
     ((emacsPackagesFor emacs).emacsWithPackages (
       epkgs: with epkgs; ([
-        vterm
+        ghostel
+        evil-ghostel
         treesit-grammars.with-all-grammars
       ])
     ));
@@ -38,7 +39,6 @@ in
           en-science
         ]
       )) # :checkers spell
-      cmake # :term vterm
       coreutils-prefixed # :emacs dired
       gnugrep # :completion vertico
       nixd # : lang nix (language server)

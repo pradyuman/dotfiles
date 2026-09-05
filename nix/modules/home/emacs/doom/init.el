@@ -61,7 +61,7 @@
        vc
 
        :term
-       vterm
+       ghostel
 
        :checkers
        (syntax +flymake +icons)
