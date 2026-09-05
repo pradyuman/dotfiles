@@ -10,7 +10,7 @@ lib.mkMerge [
     };
   }
 
-  (lib.mkIf pkgs.stdenv.isDarwin {
+  (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     services.gpg-agent = {
       enable = true;
       pinentry.package = pkgs.pinentry_mac;

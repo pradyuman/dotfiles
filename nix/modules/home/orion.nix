@@ -10,7 +10,7 @@
     inputs.nix-orion.homeModules.default
   ];
 
-  programs.orion = lib.mkIf pkgs.stdenv.isDarwin {
+  programs.orion = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     enable = true;
 
     settings = {

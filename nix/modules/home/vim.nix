@@ -1,6 +1,20 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
+  home.activation.createVimDirectories = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run mkdir -p ${
+      lib.escapeShellArgs [
+        "${config.home.homeDirectory}/.vim/backup"
+        "${config.home.homeDirectory}/.vim/swp"
+      ]
+    }
+  '';
+
   programs.vim = {
     enable = true;
 
