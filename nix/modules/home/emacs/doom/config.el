@@ -78,6 +78,13 @@
 (after! lsp-mode
   (setq lsp-idle-delay 0.1))
 
+;; Use language-server diagnostics instead of the standalone Rust checker.
+(defun +rust-disable-standalone-flymake-h ()
+  (remove-hook 'flymake-diagnostic-functions #'rust-ts-flymake t))
+
+(add-hook! '(rust-ts-mode-hook rustic-mode-hook)
+  #'+rust-disable-standalone-flymake-h)
+
 (use-package! lsp-biome
   :preface
   (defun +biome-setup-h ()
