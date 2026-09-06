@@ -36,7 +36,7 @@
 (after! corfu
   (setq corfu-auto-delay 0.1
         corfu-auto-prefix 1)
-  ;; ESC without exiting insert mode (to hide corfu suggestions while keeping the minuet ones)
+  ;; Hide Corfu suggestions without exiting insert mode.
   (map! :map corfu-map
         :i "ESC" #'corfu-quit
         :i [escape] #'corfu-quit))
@@ -83,7 +83,7 @@
   (remove-hook 'flymake-diagnostic-functions #'rust-ts-flymake t))
 
 (add-hook! '(rust-ts-mode-hook rustic-mode-hook)
-  #'+rust-disable-standalone-flymake-h)
+           #'+rust-disable-standalone-flymake-h)
 
 (use-package! lsp-biome
   :preface
@@ -100,24 +100,3 @@
   :hook
   (typescript-ts-mode . rainbow-delimiters-mode)
   (tsx-ts-mode . rainbow-delimiters-mode))
-
-;; ---
-;; LLM
-;; ---
-
-(use-package! minuet
-  :bind
-  (:map minuet-active-mode-map
-        ;; This keymap is active only while Minuet displays a suggestion.
-        ("M-p" . #'minuet-previous-suggestion)
-        ("M-n" . #'minuet-next-suggestion)
-        ("M-a" . #'minuet-accept-suggestion)
-        ;; Accept the first line, or N lines when given a numeric prefix.
-        ;; For example, C-u 2 M-A accepts two lines.
-        ("M-A" . #'minuet-accept-suggestion-line)
-        ("M-e" . #'minuet-dismiss-suggestion))
-  :hook (prog-mode . minuet-auto-suggestion-mode)
-  :config
-  (setq minuet-provider 'claude
-        minuet-auto-suggestion-debounce-delay 0.1
-        minuet-auto-suggestion-throttle-delay 0.25))
