@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   pkgs,
   ...
@@ -10,7 +11,6 @@ let
     bashls = bash-language-server;
     lua_ls = lua-language-server;
     nixd = nixd;
-    rust_analyzer = rust-analyzer;
     ts_ls = typescript-language-server;
 
     # Web
@@ -24,6 +24,7 @@ let
     taplo = taplo;
     yamlls = yaml-language-server;
   };
+  rustowl = inputs.rustowl.packages.${pkgs.system};
 in
 {
   programs.neovim = {
@@ -40,14 +41,21 @@ in
       mini-extra
       mini-icons
       mini-jump2d
+      mini-pairs
       mini-pick
       neo-tree-nvim
       neogit
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      rustaceanvim
+      rustowl.rustowl-nvim
     ];
 
-    extraPackages = lib.unique (builtins.attrValues lsp-servers) ++ [ pkgs.stylua ];
+    extraPackages = lib.unique (builtins.attrValues lsp-servers) ++ [
+      rustowl.rustowl
+      pkgs.rust-analyzer
+      pkgs.stylua
+    ];
 
     initLua = ''
       vim.lsp.enable(vim.json.decode([=[${builtins.toJSON (builtins.attrNames lsp-servers)}]=]))

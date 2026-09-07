@@ -1,33 +1,27 @@
+local color = require("utils.color")
+
 -- Use the active colorscheme as the source
-local function highlight(name)
-  return vim.api.nvim_get_hl(0, { name = name, link = false })
-end
-
-local function hex(color)
-  return string.format("#%06x", color)
-end
-
-local base = highlight("Normal")
+local base = color.hl("Normal")
 
 -- Blend 12% of an accent into the background
-local function tint(color)
+local function tint(accent)
   local result = 0
   -- Extract and blend each 8-bit channel from the packed 0xRRGGBB colors
   for shift = 0, 16, 8 do
     local bg = bit.band(bit.rshift(base.bg, shift), 255)
-    local fg = bit.band(bit.rshift(color, shift), 255)
+    local fg = bit.band(bit.rshift(accent, shift), 255)
     -- Round the blended channel and shift it back into the packed color
     result = result + math.floor(bg * 0.88 + fg * 0.12 + 0.5) * 2 ^ shift
   end
-  return hex(result)
+  return color.hex(result)
 end
 
 -- Give each editor mode a subtle accent
 local function mode(group)
-  local accent = group and highlight(group).fg
+  local accent = group and color.hl(group).fg
   local style = {
-    fg = hex(base.fg),
-    bg = accent and tint(accent) or hex(base.bg),
+    fg = color.hex(base.fg),
+    bg = accent and tint(accent) or color.hex(base.bg),
   }
   return { a = style, b = style, c = style }
 end
@@ -58,12 +52,12 @@ require("lualine").setup({
         fmt = function(path)
           return path:match("^(.*[/\\])") or ""
         end,
-        color = { fg = hex(highlight("Constant").fg) },
+        color = { fg = color.fg("Constant") },
         padding = { left = 1 },
       },
       {
         "filename",
-        color = { fg = hex(highlight("Type").fg), gui = "bold" },
+        color = { fg = color.fg("Type"), gui = "bold" },
         padding = { right = 1 },
         symbols = { modified = " ●", readonly = " [readonly]" },
       },
@@ -75,7 +69,7 @@ require("lualine").setup({
         "branch",
         icons_enabled = false,
         separator = { left = "" },
-        color = { fg = hex(base.fg), bg = hex(highlight("FloatBorder").fg) },
+        color = { fg = color.hex(base.fg), bg = color.fg("FloatBorder") },
       },
     },
   },

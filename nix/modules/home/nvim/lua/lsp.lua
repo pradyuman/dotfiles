@@ -26,15 +26,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end,
 })
 
--- Run Clippy when checking Rust code
-vim.lsp.config("rust_analyzer", {
-  settings = {
-    ["rust-analyzer"] = {
-      check = { command = "clippy" },
-    },
-  },
-})
-
 -- Recognize Neovim's vim global in Lua configuration
 vim.lsp.config("lua_ls", {
   settings = {

@@ -19,6 +19,32 @@ pick.setup({
   },
 })
 
+-- Keep code action menus compact and close to the cursor
+vim.ui.select = function(items, opts, on_choice)
+  if opts.kind ~= "codeaction" then
+    return pick.ui_select(items, opts, on_choice)
+  end
+
+  local format_item = opts.format_item or tostring
+  local width = vim.fn.strdisplaywidth(opts.prompt or "")
+  for _, item in ipairs(items) do
+    width = math.max(width, vim.fn.strdisplaywidth(format_item(item)))
+  end
+
+  return pick.ui_select(items, opts, on_choice, {
+    window = {
+      config = {
+        relative = "cursor",
+        anchor = "NW",
+        row = 1,
+        col = 0,
+        width = width + 2,
+        height = #items + 1,
+      },
+    },
+  })
+end
+
 return {
   -- Custom picker for open tabs
   tabs = function()

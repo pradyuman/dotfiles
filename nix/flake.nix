@@ -46,6 +46,11 @@
       url = "github:pradyuman/nix-vmware-fusion";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rustowl = {
+      url = "github:nix-community/rustowl-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
