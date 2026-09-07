@@ -27,6 +27,11 @@
       flake = false;
     };
 
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     doomemacs = {
       url = "git+https://github.com/doomemacs/doomemacs?submodules=1";
       flake = false;
@@ -50,6 +55,7 @@
       determinate,
       nix-darwin,
       home-manager,
+      treefmt-nix,
       ...
     }:
     {
@@ -74,7 +80,18 @@
         builtins.listToAttrs (
           map (system: {
             name = system;
-            value = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+            value =
+              let
+                pkgs = nixpkgs.legacyPackages.${system};
+                treefmt = treefmt-nix.lib.evalModule pkgs {
+                  projectRootFile = "flake.nix";
+                  programs = {
+                    nixfmt.enable = true;
+                    stylua.enable = true;
+                  };
+                };
+              in
+              treefmt.config.build.wrapper;
           }) systems
         );
 

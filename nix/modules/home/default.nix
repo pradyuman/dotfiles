@@ -7,6 +7,7 @@
     ./gh.nix
     ./ghostty.nix
     ./gpg.nix
+    ./nvim
     ./orion.nix
     ./ssh.nix
     ./vim.nix
@@ -16,7 +17,7 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   home.packages = with pkgs; [
