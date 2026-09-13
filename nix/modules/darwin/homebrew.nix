@@ -17,6 +17,7 @@
       "discord"
       "figma"
       "ghostty"
+      "grok-bot"
       "microsoft-office"
       "music-presence"
       "notion"
