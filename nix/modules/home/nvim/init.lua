@@ -41,6 +41,7 @@ require("picker")
 require("lang.rust")
 require("statusline")
 require("tree")
+require("zen")
 
 -- Use Tree-sitter when available
 vim.api.nvim_create_autocmd("FileType", {

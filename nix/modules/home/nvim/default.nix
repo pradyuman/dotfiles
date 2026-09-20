@@ -49,6 +49,7 @@ in
       nvim-treesitter.withAllGrammars
       rustaceanvim
       rustowl.rustowl-nvim
+      zen-nvim
     ];
 
     extraPackages = lib.unique (builtins.attrValues lsp-servers) ++ [
