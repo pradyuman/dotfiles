@@ -16,6 +16,7 @@ vim.g.rustaceanvim = {
 vim.lsp.config("rust-analyzer", {
   settings = {
     ["rust-analyzer"] = {
+      cargo = { features = "all" },
       check = { command = "clippy" },
     },
   },
