@@ -35,8 +35,6 @@ in
       (aspellWithDicts (
         ds: with ds; [
           en
-          en-computers
-          en-science
         ]
       )) # :checkers spell
       coreutils-prefixed # :emacs dired

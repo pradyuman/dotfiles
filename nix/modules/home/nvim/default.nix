@@ -6,6 +6,13 @@
 }:
 
 let
+  codediff-watcher-version = "0.23.2";
+  codediff-watcher = pkgs.fetchzip {
+    url = "https://github.com/esmuellert/codediff/releases/download/v${codediff-watcher-version}/codediff-watcher-${codediff-watcher-version}-macos-arm64.tar.gz";
+    hash = "sha256-IiWOlWRh+dFHEhKvBXUTafEbrOLvhXA9RnYvZm5BdaE=";
+    stripRoot = false;
+  };
+
   lsp-servers = with pkgs; {
     # Languages
     bashls = bash-language-server;
@@ -59,6 +66,7 @@ in
     ];
 
     initLua = ''
+      vim.env.CODEDIFF_WATCHER_PATH = "${codediff-watcher}/codediff-watcher"
       vim.lsp.enable(vim.json.decode([=[${builtins.toJSON (builtins.attrNames lsp-servers)}]=]))
     '';
   };
